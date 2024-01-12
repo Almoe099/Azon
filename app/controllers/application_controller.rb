@@ -1,4 +1,8 @@
 class ApplicationController < ActionController::API
+  include ActionController::RequestForgeryProtection
+
+  protect_from_forgery with: :exception
+  
   before_action :snake_case_params
 
 
@@ -27,7 +31,7 @@ class ApplicationController < ActionController::API
   end
 
   def logout
-    current_user.reset_session_token!
+    current_user.reset_session_token! if current_user
     session[:session_token] = nil
     @current_user = nil
   end
