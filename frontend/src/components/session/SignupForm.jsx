@@ -17,6 +17,7 @@ function SignupForm() {
   
     const handleSubmit = (e) => {
       e.preventDefault();
+
       if (password === confirmPassword) {
         setErrors([]);
         return dispatch(sessionActions.signup({ email, name, password }))
@@ -38,32 +39,36 @@ function SignupForm() {
   
     return (
       <>
-        <h1>Sign Up</h1>
+      <div className="signup-container">
+        <h1>Create account</h1>
         <form onSubmit={handleSubmit}>
 
           <ul>
             {errors.map(error => <li key={error}>{error}</li>)}
           </ul>
 
-          <label> Email
-            <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} required />
+          <label> Your name
+            <input type="text" value={name} onChange={(e) => setName(e.target.value)} required />
           </label>
 
-          <label> Name
-            <input type="text" value={name} onChange={(e) => setName(e.target.value)} required />
+          <label> Email
+            <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} required />
           </label>
 
           <label> Password
             <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
           </label>
 
-          <label> Confirm Password
+          <label> Re-enter password
             <input type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required />
           </label>
 
-          <button type="submit">Sign Up</button>
+          <button type="submit">Continue</button>
+
+          <button type="submit" id="demo">Demo Button</button>
 
         </form>
+       </div>
       </>
     );
   }

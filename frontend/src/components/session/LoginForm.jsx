@@ -33,7 +33,7 @@ const LoginForm = () => {
 
     return (
         <>
-          <h1>Log In</h1>
+          <h1 className="bye" >Log In</h1>
           <form onSubmit={handleSubmit}>
 
             <ul>
@@ -49,6 +49,8 @@ const LoginForm = () => {
             </label>
 
             <button type="submit">Log In</button>
+            
+            <button type="submit">Demo Button</button>
 
           </form>
         </>

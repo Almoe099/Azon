@@ -1,0 +1,17 @@
+/* Add this style for the nav-link class */
+.nav-link {
+    display: block; /* Ensure the entire image is clickable */
+    margin-top: 20px; /* Adjust the margin as needed */
+}
+  
+  /* Add more styles as needed */
+  
+.homepage {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: rgb(170, 51, 51);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}

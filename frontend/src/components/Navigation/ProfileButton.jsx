@@ -30,11 +30,19 @@ function ProfileButton({ user }) {
       e.preventDefault();
       dispatch(sessionActions.logout());
     };
+    const Carrot = () => {
+        return (
+          <div style={{ color: "orange", fontSize: "100px" }}>
+            <i className="fas fa-carrot"></i>
+          </div>
+        );
+    };
   
     return (
       <>
         <button onClick={toggleMenu}>
-          <i className="fa-solid fa-user-circle" />
+            {Carrot()}
+          {/* <i className="fa-solid fa-user-circle" /> */}
         </button>
         {showMenu && (
           <ul className="profile-dropdown" ref={dropdownRef}>

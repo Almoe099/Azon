@@ -24,7 +24,15 @@ function Navigation(){
     return (
       <ul>
         <li>
-          <NavLink to="/">Home</NavLink>
+          {/* <NavLink to="/">Home</NavLink> */}
+          <NavLink to="/" className="nav-link">
+        <img
+          src="https://i.redd.it/t7y4e5ya0gf71.jpg"
+          className="homepage"
+          alt="Home"
+          style={{ width: '200px', height: '75px', borderRadius: '10%' }} // Adjust the size as needed
+        />
+      </NavLink>
         </li>
         {sessionLinks}
       </ul>
