@@ -1,4 +1,4 @@
-import { storeCSRFToken } from "./session";
+// import { storeCSRFToken } from "./session";
 
 export async function csrfFetch(url, options = {}) {
     // set options.method to 'GET' if there is no method
@@ -27,10 +27,10 @@ export async function csrfFetch(url, options = {}) {
     return res;
 }
 
-// export function storeCSRFToken(response) {
-//     const csrfToken = response.headers.get("X-CSRF-Token");
-//     if (csrfToken) sessionStorage.setItem("X-CSRF-Token", csrfToken);
-// }
+export function storeCSRFToken(response) {
+    const csrfToken = response.headers.get("X-CSRF-Token");
+    if (csrfToken) sessionStorage.setItem("X-CSRF-Token", csrfToken);
+}
 
 export async function restoreCSRF() {
     const response = await csrfFetch("/api/session");
