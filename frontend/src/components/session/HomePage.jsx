@@ -1,16 +1,17 @@
 import React from "react";
 import "./HomePage.css";
 import azonImage from './azon.png'
+import searchIcon from './search-symbol.png'
 // import SearchIcon from "@material-ui/icons/Search";
 
 function Header() {
   return (
     <div className="header">
-        
+
       <img className="logo" src={azonImage} />
       <div className="searchBar">
         <input type="text" className="inputSearch" />
-        {/* <SearchIcon className='searchIcon' /> */}
+        < searchIcon className='searchIcon'/>
       </div>
 
       <div className="nav">
