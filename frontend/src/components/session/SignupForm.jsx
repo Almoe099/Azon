@@ -36,6 +36,10 @@ function SignupForm() {
       }
       return setErrors(['Confirm Password field must be the same as the Password field']);
     };
+
+    const demoLogin = () => {
+      store.dispatch(sessionActions.login({ email: 'demo@user.io', password: 'password' }))
+    }
   
     return (
       <>
@@ -65,7 +69,7 @@ function SignupForm() {
 
           <button type="submit">Continue</button>
 
-          <button type="submit" id="demo">Demo Button</button>
+          <button type="submit" id="demo"onClick={demoLogin}>Demo Button</button>
 
         </form>
        </div>

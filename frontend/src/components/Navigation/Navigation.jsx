@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
+import Header from "../session/HomePage";
 
 function Navigation(){
     const sessionUser = useSelector(state => state.session.user);
@@ -22,20 +23,14 @@ function Navigation(){
     );
   
     return (
-      <ul>
+      <div>
         <li>
           {/* <NavLink to="/">Home</NavLink> */}
           <NavLink to="/" className="nav-link">
-        <img
-          src="https://i.redd.it/t7y4e5ya0gf71.jpg"
-          className="homepage"
-          alt="Home"
-          style={{ width: '200px', height: '75px', borderRadius: '10%' }} // Adjust the size as needed
-        />
-      </NavLink>
+          </NavLink>
         </li>
         {sessionLinks}
-      </ul>
+      </div>
     );
 }
 

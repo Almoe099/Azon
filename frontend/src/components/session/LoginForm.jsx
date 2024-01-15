@@ -31,6 +31,10 @@ const LoginForm = () => {
         });
     };
 
+    const demoLogin = () => {
+      store.dispatch(sessionActions.login({ email: 'demo@user.io', password: 'password' }))
+    }
+
     return (
         <>
           <h1 className="bye" >Log In</h1>
@@ -50,7 +54,7 @@ const LoginForm = () => {
 
             <button type="submit">Log In</button>
             
-            <button type="submit">Demo Button</button>
+            <button type="submit" id="demo"onClick={demoLogin}>Demo Button</button>
 
           </form>
         </>
