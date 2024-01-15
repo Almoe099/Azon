@@ -1,8 +1,9 @@
 import React from "react";
 import "./HomePage.css";
 import azonImage from './azon.png'
-import searchIcon from './search-symbol.png'
-// import SearchIcon from "@material-ui/icons/Search";
+import SearchIcon from './search.png'
+import CartIcon from './cart.png'
+import flag from './usaFlag.png'
 
 function Header() {
   return (
@@ -11,10 +12,14 @@ function Header() {
       <img className="logo" src={azonImage} />
       <div className="searchBar">
         <input type="text" className="inputSearch" />
-        < searchIcon className='searchIcon'/>
+        <img className="searchIcon" src={SearchIcon} />
       </div>
 
       <div className="nav">
+
+        <div className="option">
+        <img className="flag" src={flag} />
+        </div>
 
         <div className="option">
           <span className="optionLineOne">Hello Guest</span>
@@ -26,13 +31,8 @@ function Header() {
           <span className="optionLineTwo">& Orders</span>
         </div>
 
-        <div className="option">
-          <span className="optionLineOne">Your</span>
-          <span className="optionLineTwo">Prime</span>
-        </div>
-
         <div className="optionBasket">
-          {/* <ShoppingBasketIcon /> */}
+        <img className="cartIcon" src={CartIcon} />
           <span className="optionLineTwo header__basketCount">0</span>
         </div>
 

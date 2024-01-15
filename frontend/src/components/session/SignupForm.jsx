@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate } from "react-router";
+import { Link } from "react-router-dom";
 import * as sessionActions from "../../store/session";
+import azonHome from './azonHome.png'
 import './SignupForm.css';
 
 function SignupForm() {
@@ -43,6 +45,9 @@ function SignupForm() {
   
     return (
       <>
+        <Link to={'/'}>
+          <img className="azonHome" src={azonHome} />
+        </Link>
       <div className="signup-container">
         <h1>Create account</h1>
         <form onSubmit={handleSubmit}>
