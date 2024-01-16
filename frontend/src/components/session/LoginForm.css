@@ -1,5 +1,5 @@
 .login-container {
-  max-width: 400px;
+  max-width: 350px;
   margin: auto;
   padding: 20px;
   background-color: #f8f8f8;
@@ -7,11 +7,14 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
   position: relative;
-  margin-top: 70px;
+  margin-top: 80px;
 }
 
 h1 {
-  color: #333;
+  color: black;
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 form {
@@ -26,16 +29,21 @@ label {
   width: 100%;
   text-align: left;
   font-weight: bold;
-  color: #555;
+  color: black;
 }
 
 input {
-  width: 100%;
+  width: 94%;
   padding: 10px;
   margin-top: 5px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+
+input:focus {
+  border-color: blue;
+  outline: none; /* Remove the default outline */
 }
 
 button {
@@ -55,11 +63,62 @@ button {
 }
 
 .azonHome {
-    height: 40px;
-    width: 100px;
-    position: absolute;
-    top: 0; /* Place the image at the top of the container */
-    left: 50%; /* Center the image horizontally at 50% from the left */
-    transform: translateX(-50%); /* Center the image precisely horizontally */
-    margin-top: 15px;
+  width: 100px;
+  position: absolute;
+  top: 0; /* Place the image at the top of the container */
+  left: 50%; /* Center the image horizontally at 50% from the left */
+  transform: translateX(-50%); /* Center the image precisely horizontally */
+  margin-top: 15px;
+}
+
+.createButton {
+  width: 350px;
+  padding: 10px;
+  background-color: whitesmoke;
+  border: 1px solid gray;
+  position: absolute;
+  border: 1px solid gray;
+  margin-top: 100px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+} 
+
+.line {
+  line-height: 1;
+  font-size: 12px;
+  color: #767676;
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+  /* background-color: #fff; */
+  padding: 0 8px 0 7px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 25px;
+}
+
+.line .newAccount {
+  line-height: 1;
+  font-size: 12px;
+  color: #767676;
+  font-weight: 400;
+  position: relative;
+  display: inline-block;
+  background-color: #fff;
+  padding: 0 0px 0 0px;
+  margin-left: 5px;
+  margin-right: 5px;
+  
+}
+
+.line::before, .line::after {
+  content: "";
+  position: relative;
+  bottom: 3px;
+  display: inline-block;
+  width: 120px;
+  border-top: 1px solid #e7e7e7;
 }

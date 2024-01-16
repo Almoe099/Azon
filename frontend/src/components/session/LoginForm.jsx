@@ -40,12 +40,13 @@ const LoginForm = () => {
   };
 
   return (
-    <>
+    <div className="login">
     <Link to={'/'}>
       <img className="azonHome" src={azonHome} />
     </Link>
+
       <div className="login-container">
-      <h1>Log In</h1>
+        <h1>Sign in</h1>
       <form onSubmit={handleSubmit}>
         <ul>
           {errors.map((error) => (
@@ -60,6 +61,7 @@ const LoginForm = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            className="input"
           />
         </label>
 
@@ -73,14 +75,23 @@ const LoginForm = () => {
           />
         </label>
 
-        <button type="submit">Log In</button>
+        <button type="submit">Continue</button>
 
         <button type="submit" id="demo" onClick={demoLogin}>
           Demo Button
         </button>
+
+        <p className='footerText'>By continuing, you agree to Azon's Conditions of Use and Privacy Notice.</p>
+
       </form>
       </div>
-    </>
+        <div className='line'>
+          <p className='newAccount'>New to Azon?</p>
+        </div>
+          <Link to={'/signup'}>
+            <button className="createButton" type="submit">Create your Azon account</button>
+          </Link>
+    </div>
   );
 };
 

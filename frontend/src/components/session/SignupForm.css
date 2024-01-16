@@ -1,5 +1,5 @@
 .signup-container {
-  max-width: 400px;
+  max-width: 350px;
   margin: auto;
   padding: 20px;
   background-color: #f8f8f8;
@@ -7,11 +7,14 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
   position: relative;
-  margin-top: 70px;
+  margin-top: 80px;
 }
 
 h1 {
-  color: #333;
+  color: black;
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 form {
@@ -26,16 +29,21 @@ label {
   width: 100%;
   text-align: left;
   font-weight: bold;
-  color: #555;
+  color: black;
 }
 
 input {
-  width: 100%;
+  width: 94%;
   padding: 10px;
   margin-top: 5px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+
+input:focus {
+  border-color: blue;
+  outline: none; /* Remove the default outline */
 }
 
 button {
@@ -55,11 +63,25 @@ button {
 }
 
 .azonHome {
-    height: 40px;
-    width: 100px;
-    position: absolute;
-    top: 0; /* Place the image at the top of the container */
-    left: 50%; /* Center the image horizontally at 50% from the left */
-    transform: translateX(-50%); /* Center the image precisely horizontally */
-    margin-top: 15px;
+  width: 100px;
+  position: absolute;
+  top: 0; /* Place the image at the top of the container */
+  left: 50%; /* Center the image horizontally at 50% from the left */
+  transform: translateX(-50%); /* Center the image precisely horizontally */
+  margin-top: 15px;
+}
+
+.footerText, .footerLogin {
+  font-size: 14px;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.footerText a, .footerLogin a {
+  color: #0066c0;
+  text-decoration: none;
+}
+
+.footerText a:hover, .footerLogin a:hover {
+  text-decoration: underline;
 }
