@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, Navigate } from "react-router-dom";
 import azonHome from './azonHome.png'
 import './LoginForm.css';
+import Footer from "./AuthFooter";
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -91,6 +92,7 @@ const LoginForm = () => {
           <Link to={'/signup'}>
             <button className="createButton" type="submit">Create your Azon account</button>
           </Link>
+          <Footer />
     </div>
   );
 };
