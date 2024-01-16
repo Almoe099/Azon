@@ -57,7 +57,7 @@ function SignupForm() {
           </ul>
 
           <label> Your name
-            <input type="text" value={name} onChange={(e) => setName(e.target.value)} required />
+            <input type="text" value={name} onChange={(e) => setName(e.target.value)} required placeholder="First and last name" />
           </label>
 
           <label> Email
@@ -65,7 +65,7 @@ function SignupForm() {
           </label>
 
           <label> Password
-            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required placeholder="At least 6 characters" />
           </label>
 
           <label> Re-enter password

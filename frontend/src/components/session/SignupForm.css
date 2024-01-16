@@ -7,7 +7,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
   position: relative;
-  margin-top: 10px;
+  margin-top: 70px;
 }
 
 h1 {
@@ -61,5 +61,5 @@ button {
     top: 0; /* Place the image at the top of the container */
     left: 50%; /* Center the image horizontally at 50% from the left */
     transform: translateX(-50%); /* Center the image precisely horizontally */
-    margin-top: 10px;
+    margin-top: 15px;
 }
