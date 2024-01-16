@@ -9,7 +9,7 @@ function Navigation(){
   
     const sessionLinks = sessionUser ? (
       <li>
-        <ProfileButton user={sessionUser} />
+        {/* <ProfileButton user={sessionUser} /> */}
       </li>
     ) : (
       <>

@@ -4,10 +4,31 @@ import azonImage from "../../pictures/azon.png";
 import SearchIcon from "../../pictures/search.png";
 import CartIcon from "../../pictures/cart.png";
 import flag from "../../pictures/usaFlag.png";
+import * as sessionActions from "../../store/session";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import "./HomePage.css";
 
 function Header() {
   const user = useSelector((state) => state.session.user);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const logout = (e) => {
+    e.preventDefault();
+    dispatch(sessionActions.logout());
+    navigate('/')
+  };
+
+  const handleSubmit = (e) => {
+    if (user) {
+      // If there is a user, perform logout
+      logout(e);
+    } else {
+      // If there is no user, navigate to the login page
+      navigate('/login');
+    }
+  };
 
   return (
     <div className="header">
@@ -34,13 +55,13 @@ function Header() {
             <div className="account-dropDown">
               <span className="optionLineTwo">Accounts & Lists</span>
               <div className="dropdown-content">
-                <Link to={"/login"}>
-                  <button type="submit" className="signin-button">
-                    Sign in
+                <Link to={user ? '/' : '/login'}>
+                  <button type="submit" className="signin-button" onClick={handleSubmit}>
+                  {!user ? "Sign in" : "Sign out"}
                   </button>
                 </Link>
                 <label className="new-customer-label">
-                  New customer? <Link to={"/signup"}>Start here.</Link>
+                  {!user ? "New customer?" : ""}<Link to={"/signup"}>{!user ? "Start here." : ""}</Link>
                 </label>
               </div>
             </div>
