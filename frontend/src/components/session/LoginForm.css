@@ -122,3 +122,7 @@ button {
   width: 120px;
   border-top: 1px solid #e7e7e7;
 }
+
+.errors {
+  color: #c40000;
+}

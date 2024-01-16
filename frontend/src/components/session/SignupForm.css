@@ -85,3 +85,7 @@ button {
 .footerText a:hover, .footerLogin a:hover {
   text-decoration: underline;
 }
+
+.errors {
+  color: #c40000;
+}

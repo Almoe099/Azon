@@ -49,11 +49,9 @@ const LoginForm = () => {
       <div className="login-container">
         <h1>Sign in</h1>
       <form onSubmit={handleSubmit}>
-        <ul>
           {errors.map((error) => (
-            <li key={error}>{error}</li>
+            <li key={error} className="errors">{error}</li>
           ))}
-        </ul>
 
         <label>
           Email

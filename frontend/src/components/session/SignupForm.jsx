@@ -53,9 +53,9 @@ function SignupForm() {
         <h1>Create account</h1>
         <form onSubmit={handleSubmit}>
 
-          <ul>
-            {errors.map(error => <li key={error}>{error}</li>)}
-          </ul>
+          {/* <ul> */}
+            {errors.map(error => <li key={error} className="errors">{error}</li>)}
+          {/* </ul> */}
 
           <label> Your name
             <input type="text" value={name} onChange={(e) => setName(e.target.value)} required placeholder="First and last name" />
