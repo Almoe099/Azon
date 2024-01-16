@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Navigate } from "react-router";
 import { Link } from "react-router-dom";
 import * as sessionActions from "../../store/session";
-import azonHome from './azonHome.png'
+import azonHome from "../../pictures/azonHome.png";
 import './SignupForm.css';
 import Footer from "./AuthFooter";
 

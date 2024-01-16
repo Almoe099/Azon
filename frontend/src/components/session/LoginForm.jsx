@@ -2,7 +2,7 @@ import { useState } from "react";
 import * as sessionActions from "../../store/session";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, Navigate } from "react-router-dom";
-import azonHome from './azonHome.png'
+import azonHome from "../../pictures/azonHome.png";
 import './LoginForm.css';
 import Footer from "./AuthFooter";
 

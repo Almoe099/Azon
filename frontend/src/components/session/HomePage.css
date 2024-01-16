@@ -1,4 +1,9 @@
 .header {
+    display: flex;
+    flex-direction: column;
+}
+
+.headerRow1 {
     height: 60px;
     display: flex;
     align-items: center;
@@ -7,6 +12,18 @@
     top: 0;
     z-index: 100;
     padding: 0;
+}
+
+.headerRow2 {
+    height: 41.5px;
+    display: flex;
+    align-items: center;
+    background-color: #313841;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    padding: 0;
+    justify-content: space-evenly;
 }
 
 .logo {
@@ -87,9 +104,24 @@
     margin-right: 10px;
     color: white;
     border: 1px solid transparent;
+    padding: 8px;
 }
 
 .option:hover {
+    border: 1px solid white;
+}
+
+.optionCategory {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: white;
+    border: 1px solid transparent;
+    padding: 10px;
+}
+
+.optionCategory:hover {
     border: 1px solid white;
 }
 
@@ -117,7 +149,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   padding: 10px;
-  z-index: 1;
+  z-index: 100;
   width: 300px;
 }
 
@@ -152,4 +184,25 @@
 .new-customer-label a:hover {
   text-decoration: underline;
   color: goldenrod;
+}
+
+.categories {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    padding: 100px;
+}
+
+.background {
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1500px;
+}
+.background {
+    width: 100%;
+    z-index: -1;
+    margin-bottom: -150px;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.8));
 }
