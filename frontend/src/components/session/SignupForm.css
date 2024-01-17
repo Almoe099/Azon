@@ -15,6 +15,7 @@ h1 {
   text-align: left;
   margin-top: 0;
   margin-bottom: 0;
+  font-weight: 400;
 }
 
 form {
@@ -28,7 +29,7 @@ label {
   display: block;
   width: 100%;
   text-align: left;
-  font-weight: bold;
+  /* font-weight: bold; */
   color: black;
 }
 
@@ -54,7 +55,7 @@ button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 #demo {

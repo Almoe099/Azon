@@ -75,7 +75,7 @@ function SignupForm() {
 
           <button type="submit">Continue</button>
 
-          <button type="submit" id="demo"onClick={demoLogin}>Demo Button</button>
+          <button type="submit" id="demo"onClick={demoLogin}>Demo Login</button>
 
           <p className='footerText'>By creating an account, you agree to Azon's Conditions of Use and Privacy Notice.</p>
           <p className='footerLogin'>Already have an account? <a href="/login">Sign in</a> </p>

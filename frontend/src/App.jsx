@@ -6,6 +6,7 @@ import SignupForm from "./components/session/SignupForm";
 import Navigation from "./components/Navigation";
 import Header from "./components/session/HomePage";
 import * as sessionActions from "./store/session";
+import ProductList from "./components/product/ProductList";
 
 function Layout(){
 
@@ -47,6 +48,11 @@ const router = createBrowserRouter([
       {
         path: 'signup',
         element: <SignupForm />
+      },
+
+      {
+        path: 'products',
+        element: <ProductList />
       }
 
     ]

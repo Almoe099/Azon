@@ -7,6 +7,8 @@ import flag from "../../pictures/usaFlag.png";
 import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import ProductList from "../product/ProductList";
+import ProductDetails from "../product/ProductDetails";
 import "./HomePage.css";
 
 function Header() {

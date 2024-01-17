@@ -77,7 +77,7 @@ const LoginForm = () => {
         <button type="submit">Continue</button>
 
         <button type="submit" id="demo" onClick={demoLogin}>
-          Demo Button
+          Demo Login
         </button>
 
         <p className='footerText'>By continuing, you agree to Azon's Conditions of Use and Privacy Notice.</p>
