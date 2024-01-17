@@ -7,8 +7,6 @@ import flag from "../../pictures/usaFlag.png";
 import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import ProductList from "../product/ProductList";
-import ProductDetails from "../product/ProductDetails";
 import "./HomePage.css";
 
 function Header() {
@@ -35,17 +33,21 @@ function Header() {
   return (
     <div className="header">
       <div className="headerRow1">
+
         <img className="logo" src={azonImage} />
+
         <div className="searchBar">
           <input
             type="text"
             className="inputSearch"
             placeholder="Search Azon"
           />
+
           <img className="searchIcon" src={SearchIcon} id="search" />
         </div>
 
         <div className="nav">
+          
           <div className="optionIcon">
             <img className="icon" src={flag} />
           </div>

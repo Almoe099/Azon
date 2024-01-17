@@ -1,53 +1,64 @@
 import { csrfFetch } from "./csrf";
 
-const GET_PRODUCTS = 'product/GET_PRODUCTS'
-const GET_PRODUCT = 'product/GET_PRODUCT'
+export const RECEIVE_PRODUCT = 'products/RECEIVE_PRODUCT';
+export const RECEIVE_PRODUCTS = 'products/RECEIVE_PRODUCTS';
 
-export const getProducts = () => {
-    return {
-      type: GET_PRODUCTS,
-      products
-    };
+
+export const recieveProducts = (products) => ({
+  type: RECEIVE_PRODUCTS,
+  products,
+});
+
+
+export const recieveProduct = (product) => ({
+  type: RECEIVE_PRODUCT,
+  product,
+});
+
+export const selectProductsArray = (state) => Object.values(state.products);
+
+export const selectProduct = (productId) => (state) => {
+  const products = selectProductsArray(state);
+  return products.find((product) => product.id === productId);
 };
 
-export const getProduct = (productId) => {
-    return {
-      type: GET_PRODUCT,
-      productId
-    };
+
+export const fetchProducts = () => async (dispatch) => {
+  const res = await csrfFetch("/api/products", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  const productData = await res.json();
+  dispatch(recieveProducts(productData));
 };
 
-export const selectProductsArray = (state) => Object.values(state.product);
-export const selectProduct = (productId) => state => state.products[productId]
 
-export const fetchProducts = () => async dispatch => {
-    const res = await csrfFetch(`api/products`)
-    const data = await res.json()
-    if (res.ok){
-        dispatch(getProducts())
-    }
-}
+export const fetchProduct = (productId) => async (dispatch) => {
+  const res = await csrfFetch(`/api/products/${productId}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  const productData = await res.json();
+  dispatch(recieveProduct(productData));
+};
 
-export const fetchProduct = (productId) => async dispatch => {
-    const res = await csrfFetch(`api/products${productId}`)
-    const data = await res.json()
-    if (res.ok){
-        dispatch(getProduct(data))
-    }
-}
 
 const productsReducer = (state = {}, action) => {
-    let newState = {...state}
-    switch(action.type){
-        case GET_PRODUCTS:
-            newState = {...action.products}
-            return newState
-        case GET_PRODUCT: 
-            newState[action.product.id] = action.product
-            return newState
-        default:
-            return state
-    }
-}
+  const newState = { ...state };
 
-export default productsReducer
+  switch (action.type) {
+  case RECEIVE_PRODUCTS:
+    return action.products;
+  case RECEIVE_PRODUCT:
+    newState[action.product.id] = action.product;
+    return newState;
+  default:
+    return state;
+  }
+};
+
+export default productsReducer;

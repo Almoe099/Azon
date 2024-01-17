@@ -6,8 +6,7 @@ import SignupForm from "./components/session/SignupForm";
 import Navigation from "./components/Navigation";
 import Header from "./components/session/HomePage";
 import * as sessionActions from "./store/session";
-import ProductList from "./components/product/ProductList";
-
+import ProductsIndex from "./components/product/ProductIndex";
 function Layout(){
 
   const dispatch = useDispatch()
@@ -52,7 +51,7 @@ const router = createBrowserRouter([
 
       {
         path: 'products',
-        element: <ProductList />
+        element: <ProductsIndex />
       }
 
     ]
