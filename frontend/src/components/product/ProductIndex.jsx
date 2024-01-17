@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { fetchProducts, selectProductsArray } from '../../store/product';
+import './ProductIndex.css'
 
 const ProductsIndex = () => {
   const dispatch = useDispatch();
@@ -12,7 +13,7 @@ const ProductsIndex = () => {
   }, [dispatch]);
 
   return (
-<ul className='productsIndexPage'>
+<div className='productsIndexPage'>
   <div className="productsIndexDivider"></div>
   <div className="products-container">
     {products.map((product) => (
@@ -21,14 +22,14 @@ const ProductsIndex = () => {
           <div className="product-image-wrapper">
             <img className='productImage' src="https://images-na.ssl-images-amazon.com/images/I/51Avf7lB49L._AC_UL450_SR450,320_.jpg" alt="Product Image" />
           </div>
-          <p className='productName'>{product.name}</p>
+          <h1 className='productName'>{product.name}</h1>
           <p className='productPrice'>${product.price}</p>
         </div>
       </div>
 
     ))}
   </div>
-</ul>
+</div>
   );
 };
 
