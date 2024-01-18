@@ -87,7 +87,7 @@ function Navigation() {
         <div className="categories">
           <div className="optionCategory">Best Sellers</div>
           <div className="optionCategory">New Releases</div>
-          <div className="optionCategory">Today's Deals</div>
+          <div className="optionCategory">Today&apos;s Deals</div>
           <div className="optionCategory">Prime</div>
         </div>
       </div>

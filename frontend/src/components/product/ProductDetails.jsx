@@ -4,7 +4,6 @@
 
 
 const ProductDetails = () => {
-//     console.log(product)
 //     const dispatch = useDispatch()
 
 //     return (

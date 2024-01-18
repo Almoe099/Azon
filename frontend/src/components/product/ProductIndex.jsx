@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
 import { fetchProducts, selectProductsArray } from '../../store/product';
 import './ProductIndex.css'
 

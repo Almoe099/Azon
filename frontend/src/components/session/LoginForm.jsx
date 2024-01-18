@@ -3,11 +3,13 @@ import * as sessionActions from "../../store/session";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, Navigate } from "react-router-dom";
 import azonHome from "../../pictures/azonHome.png";
-import './LoginForm.css';
 import Footer from "./AuthFooter";
+import configureStore from "../../store/store";
+import './LoginForm.css';
 
 const LoginForm = () => {
   const dispatch = useDispatch();
+  const store = configureStore();
   const sessionUser = useSelector((state) => state.session.user);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -80,7 +82,7 @@ const LoginForm = () => {
           Demo Login
         </button>
 
-        <p className='footerText'>By continuing, you agree to Azon's Conditions of Use and Privacy Notice.</p>
+        <p className='footerText'>By continuing, you agree to Azon&apos;s Conditions of Use and Privacy Notice.</p>
 
       </form>
       </div>

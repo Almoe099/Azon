@@ -4,4 +4,5 @@
 set -o errexit
 
 bundle install
-rails db:migrate db:seed # if needed
+rails db:migrate
+rails db:seed #if needed

@@ -5,10 +5,14 @@ import { Link } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import azonHome from "../../pictures/azonHome.png";
 import './SignupForm.css';
+import configureStore from "../../store/store";
 import Footer from "./AuthFooter";
+
+
 
 function SignupForm() {
     const dispatch = useDispatch();
+    const store = configureStore();
     const sessionUser = useSelector(state => state.session.user);
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
@@ -75,9 +79,9 @@ function SignupForm() {
 
           <button type="submit">Continue</button>
 
-          <button type="submit" id="demo"onClick={demoLogin}>Demo Login</button>
+          <button type="submit" id="demo" onClick={demoLogin}>Demo Login</button>
 
-          <p className='footerText'>By creating an account, you agree to Azon's Conditions of Use and Privacy Notice.</p>
+          <p className='footerText'>By creating an account, you agree to Azon&apos;s Conditions of Use and Privacy Notice.</p>
           <p className='footerLogin'>Already have an account? <a href="/login">Sign in</a> </p>
 
         </form>

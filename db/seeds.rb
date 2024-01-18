@@ -32,5 +32,25 @@ ApplicationRecord.transaction do
     })
   end
 
+  # Product.create!({
+  #   name: "name",
+  #   price: 5,
+  #   category: "category",
+  #   dimensions: "32-54-1",
+  #   weight: "40ibs",
+  #   description: "welcome to azon"
+  # })
+
+  10.times do |i|
+    Product.create!(
+      name: "Product #{i + 1}",
+      price: rand(5..50),
+      category: "Category #{i + 1}",
+      dimensions: "#{rand(10..50)}-#{rand(20..70)}-#{rand(1..5)}",
+      weight: "#{rand(1..50)}ibs",
+      description: "Description for Product #{i + 1}"
+    )
+  end
+
   puts "Done!"
 end

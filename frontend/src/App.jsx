@@ -7,13 +7,12 @@ import Navigation from "./components/Navigation";
 import HomePage from "./components/session/HomePage";
 import * as sessionActions from "./store/session";
 import ProductsIndex from "./components/product/ProductIndex";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 function Layout(){
 
   const dispatch = useDispatch()
   const [isLoaded, setIsLoaded] = useState(false)
 
-  const navigate = useNavigate();
   const location = useLocation();
 
   const isLoginPage = location.pathname === '/login';
