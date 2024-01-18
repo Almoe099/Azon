@@ -17,10 +17,12 @@ const ProductsIndex = () => {
       <div className="products-container">
         {products.map((product) => (
           <div key={product.id} className="product-card">
+            <div className="card">
+                <img className="productImage" src="https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?cs=srgb&dl=pexels-math-90946.jpg&fm=jpg" alt="Product Image" />
             <div className="card-content">
-                <img src="LEGO Icons Bouquet of Roses, Home Décor Artificial Flowers, Gift for Her or Him for Anniversary and Valentine’s Day, Botanica" alt="Product Image" />
-              <h1 className="productName">{product.name}</h1>
+              <p className="productName">{product.name}</p>
               <p className="productPrice">${product.price}</p>
+            </div>
             </div>
           </div>
         ))}

@@ -18,7 +18,7 @@
   height: 41.5px;
   display: flex;
   align-items: center;
-  background-color: #313841;
+  background-color: #232f3e;
   top: 0;
   z-index: 1;
   padding: 0;
@@ -63,17 +63,23 @@
 .searchIcon {
   padding: 5px;
   height: 22px;
-  background-color: orange;
+  background-color: #febd69;
   border-radius: 0 4px 4px 0;
 }
 
 
 .optionLineOne {
-  font-size: 13px;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: start;
+  letter-spacing: normal;
 }
 
 .optionLineTwo {
-  font-size: 20px;
+  font-size: 14px;
+  text-align: start;
+  line-height: 12px;
+  letter-spacing: normal;
   font-weight: 800;
 }
 
@@ -179,14 +185,14 @@ justify-content: center;
 }
 
 .new-customer-label a {
-color: #0066c0;
+color: #0055aa;
 text-decoration: none;
 margin-left: 5px; /* Adjust the margin as needed */
 }
 
 .new-customer-label a:hover {
 text-decoration: underline;
-color: goldenrod;
+color: #e47911;
 }
 
 .categories {
