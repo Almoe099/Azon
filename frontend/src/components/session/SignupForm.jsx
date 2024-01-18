@@ -5,14 +5,12 @@ import { Link } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import azonHome from "../../pictures/azonHome.png";
 import './SignupForm.css';
-import configureStore from "../../store/store";
 import Footer from "./AuthFooter";
 
 
 
 function SignupForm() {
     const dispatch = useDispatch();
-    const store = configureStore();
     const sessionUser = useSelector(state => state.session.user);
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
@@ -45,7 +43,7 @@ function SignupForm() {
     };
 
     const demoLogin = () => {
-      store.dispatch(sessionActions.login({ email: 'demo@user.io', password: 'password' }))
+      dispatch(sessionActions.login({ email: 'demo@user.io', password: 'password' }))
     }
   
     return (

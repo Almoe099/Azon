@@ -4,12 +4,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, Navigate } from "react-router-dom";
 import azonHome from "../../pictures/azonHome.png";
 import Footer from "./AuthFooter";
-import configureStore from "../../store/store";
 import './LoginForm.css';
 
 const LoginForm = () => {
   const dispatch = useDispatch();
-  const store = configureStore();
   const sessionUser = useSelector((state) => state.session.user);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -37,7 +35,7 @@ const LoginForm = () => {
   };
 
   const demoLogin = () => {
-    store.dispatch(
+    dispatch(
       sessionActions.login({ email: "demo@user.io", password: "password" })
     );
   };

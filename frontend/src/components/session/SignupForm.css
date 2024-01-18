@@ -13,9 +13,10 @@
 h1 {
   color: black;
   text-align: left;
-  margin-top: 0;
+  margin-bottom: 25px !important;
   margin-bottom: 0;
   font-weight: 400;
+  font-size: 28px !important;
 }
 
 form {
@@ -50,7 +51,7 @@ input:focus {
 button {
   width: 100%;
   padding: 10px;
-  background-color: gold;
+  background-color: #ffd814;
   color: black;
   border: none;
   border-radius: 4px;
@@ -58,9 +59,17 @@ button {
   /* font-weight: bold; */
 }
 
+button:hover {
+  background-color: #f0c14b;
+}
+
 #demo {
   margin-top: 10px;
   background-color: goldenrod;
+}
+
+#demo:hover {
+  background-color: #f0c14b;
 }
 
 .azonHome {
@@ -76,6 +85,7 @@ button {
   font-size: 14px;
   text-align: left;
   margin-top: 20px;
+  line-height: 1.5;
 }
 
 .footerText a, .footerLogin a {
