@@ -21,6 +21,7 @@ const ProductsIndex = () => {
                 <img className="productImage" src="https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?cs=srgb&dl=pexels-math-90946.jpg&fm=jpg" alt="Product Image" />
             <div className="card-content">
               <p className="productName">{product.name}</p>
+              <p className="productReview">5 Stars</p>
               <p className="productPrice">${product.price}</p>
             </div>
             </div>

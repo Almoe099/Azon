@@ -1,3 +1,4 @@
+import { object } from "prop-types";
 import { csrfFetch } from "./csrf";
 
 export const RECEIVE_PRODUCT = 'products/RECEIVE_PRODUCT';
@@ -18,8 +19,7 @@ export const recieveProduct = (product) => ({
 export const selectProductsArray = (state) => Object.values(state.products);
 
 export const selectProduct = (productId) => (state) => {
-  const products = selectProductsArray(state);
-  return products.find((product) => product.id === productId);
+  return state?.products[productId] || null;
 };
 
 
@@ -48,14 +48,16 @@ export const fetchProduct = (productId) => async (dispatch) => {
 
 
 const productsReducer = (state = {}, action) => {
-  const newState = { ...state };
+  // const newState = { ...state };
+  Object.freeze(state)
 
   switch (action.type) {
   case RECEIVE_PRODUCTS:
     return action.products;
   case RECEIVE_PRODUCT:
-    newState[action.product.id] = action.product;
-    return newState;
+    // newState[action.product.id] = action.product;
+    return {...state, product: action.product}
+    // return newState;
   default:
     return state;
   }

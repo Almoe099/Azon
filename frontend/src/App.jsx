@@ -7,6 +7,7 @@ import Navigation from "./components/Navigation";
 import HomePage from "./components/session/HomePage";
 import * as sessionActions from "./store/session";
 import ProductsIndex from "./components/product/ProductIndex";
+import ProductShow from "./components/product/ProductShow";
 import { useLocation } from "react-router-dom";
 function Layout(){
 
@@ -48,7 +49,7 @@ const router = createBrowserRouter([
       },
     
       {
-        path: '/login',
+        path: 'login',
         element: <LoginForm />
       },
 
@@ -60,6 +61,10 @@ const router = createBrowserRouter([
       {
         path: 'products',
         element: <ProductsIndex />
+      },
+      {
+        path: 'products/:productId',
+        element: <ProductShow />
       }
 
     ]

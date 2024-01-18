@@ -51,6 +51,14 @@
     text-decoration: underline;
   }
 }
+.productReview {
+  font-size: 14px;
+  line-height: 20px;
+  text-align: left;
+  letter-spacing: normal;
+  color: Gold;
+  /* margin-top: 8px; */
+}
 
 .productPrice {
   font-size: 14px;

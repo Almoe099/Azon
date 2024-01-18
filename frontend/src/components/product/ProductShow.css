@@ -1,0 +1,81 @@
+.productCardItem {
+  display: flex;
+  border: 1px solid #ddd;
+  padding-top: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border: solid 3px red;
+}
+
+.productImageContainer {
+    width: 35%;
+  margin-right: 10px;
+  border: solid 3px purple;
+}
+
+.productImage {
+    width: 100%;
+}
+
+.productDetailsContainer {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-right: 20px;
+  border: solid 3px blue;
+}
+
+.productName {
+    font-size: 100px;
+  /* font-size: 1.5em;
+  margin-bottom: 10px; */
+}
+
+.productPrice {
+  font-size: 30px;
+  color: #B12704; /* Amazon's price color */
+  border: solid 3px pink;
+}
+
+.productCategory,
+.productBrand,
+.productDimensions,
+.productWeight {
+  margin-bottom: 5px;
+  border: solid 3px pink;
+}
+
+.productDescription {
+  margin-top: 10px;
+  border: solid 3px pink;
+}
+
+.cartContainer {
+    width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-left: auto; /* Push cart container to the right */
+  border: solid 3px yellow;
+}
+
+.Availabilty {
+  font-size: 1.1em;
+  color: #007600; /* Amazon's in-stock color */
+  margin-bottom: 10px;
+}
+
+.cartButton,
+.buyButton {
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #f0c14b; /* Amazon's cart button color */
+  border: 1px solid #a88734; /* Amazon's button border color */
+  color: #111; /* Amazon's button text color */
+  cursor: pointer;
+}
+
+.buyButton {
+  background-color: #ff9900; /* Amazon's buy now button color */
+  border: 1px solid #e77600; /* Amazon's buy now button border color */
+}
