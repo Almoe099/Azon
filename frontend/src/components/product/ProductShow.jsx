@@ -43,38 +43,38 @@ const ProductShow = () => {
 
           <h3 className="productPriceShow">${product.price}</h3>
 
-          <h5 className="productTypeContainer">
+          <div className="productTypeContainer">
             <h5 className="typeContainer">
               <p className="type">Category:</p>
             </h5>
             <h5 className="productCategory">
               <p>{product.category}</p>
             </h5>
-          </h5>
-          <h5 className="productTypeContainer">
+          </div>
+          <div className="productTypeContainer">
             <h5 className="typeContainer">
               <p className="type">Brand:</p>
             </h5>
             <h5 className="productBrand">
               <p>{product.brand}</p>
             </h5>
-          </h5>
-          <h5 className="productTypeContainer">
+          </div>
+          <div className="productTypeContainer">
             <h5 className="typeContainer">
               <p className="type">Dimensions:</p>
             </h5>
             <h5 className="productDimensions">
               <p>{product.dimensions}</p>
             </h5>
-          </h5>
-          <h5 className="productTypeContainer">
+          </div>
+          <div className="productTypeContainer">
             <h5 className="typeContainer">
               <p className="type">Weight:</p>
             </h5>
             <h5 className="productWeight">
               <p>{product.weight}</p>
             </h5>
-          </h5>
+          </div>
 
           <div className="lineSeparator"></div>
 
