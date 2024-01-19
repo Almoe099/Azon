@@ -1,0 +1,18 @@
+.freeD {
+    font-size: 14px;
+    color: #007185;
+    margin-right: 10px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.delivery {
+    /* margin-top: -10px; */
+    font-size: 14px;
+    line-height: 23px;
+    text-align: start;
+    letter-spacing: normal;
+    color: #0f1111;
+    margin-bottom: 20px;
+    font-weight: bold;
+}

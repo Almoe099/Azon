@@ -17,12 +17,7 @@ class Api::ProductsController < ApplicationController
     end
   end
 
-
   private
-
-  def set_product
-    @product = Product.find(params[:id])
-  end
 
   def product_params
     params.require(:product).permit(:name, :price, :category, :brand, :dimensions, :weight, :description)

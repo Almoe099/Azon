@@ -1,7 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchProduct, selectProduct } from "../../store/product";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import DeliveryComponent from "./date";
 import "./ProductShow.css";
 
 const ProductShow = () => {
@@ -13,10 +14,11 @@ const ProductShow = () => {
   useEffect(() => {
     dispatch(fetchProduct(productId));
   }, [dispatch, productId]);
-
+  
   if (!product) {
     return <div>Loading...</div>;
   }
+
 
   return (
     <>
@@ -25,7 +27,7 @@ const ProductShow = () => {
         <div className="productImageContainer">
           <img
             className="productImageShow"
-            src="https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?cs=srgb&dl=pexels-math-90946.jpg&fm=jpg"
+            src={product.photoUrl}
             alt="Product Image"
           />
         </div>
@@ -80,19 +82,17 @@ const ProductShow = () => {
 
           <div className="productDescriptionContainer">
             <label className="about">About this item</label>
-            <li className="productDescription">{product.description}</li>
-            <li className="productDescription">{product.description}</li>
-            <li className="productDescription">{product.description}</li>
-            <li className="productDescription">{product.description}</li>
-            <li className="productDescription">{product.description}</li>
-            <li className="productDescription">{product.description}</li>
-            <li className="productDescription">{product.description}</li>
+            {product.description.split("*").map((line, index) => {
+              return (
+                <li className="productDescription" key={index}>{line}</li>
+              )
+            })}
           </div>
         </div>
         <div className="cartContainer">
           <h3 className="productPriceShow">${product.price}</h3>
-          <span className="free">Free Returns</span>
-          <span className="free">Free Delivery</span>
+          <span className="freeR">Free Returns</span>
+          <span className="delivery"><DeliveryComponent /></span>
           <h4 className="Availabilty">In Stock</h4>
 
           <form>
@@ -109,16 +109,18 @@ const ProductShow = () => {
             <button className="cartButton" type="submit">
               Add to Cart
             </button>
-          </form>
-
           <button className="buyButton" type="submit">
             Buy Now
           </button>
-          <span>Payment</span>
-          <span>Payment</span>
-          <span>Payment</span>
-          <span>Payment</span>
-          <span>Payment</span>
+
+          </form>
+          <div className="cartFooter">
+            <span>Payment</span>
+            <span>Payment</span>
+            <span>Payment</span>
+            <span>Payment</span>
+            <span>Payment</span>
+          </div>
         </div>
       </div>
     </>
