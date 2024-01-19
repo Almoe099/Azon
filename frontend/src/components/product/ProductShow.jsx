@@ -11,8 +11,8 @@ const ProductShow = () => {
 
     console.log(productId)
     
-    const product = (selectProduct(productId))
-    console.log(product.name)
+    const product = useSelector(selectProduct(productId))
+    console.log(product)
 
     useEffect(() => {
         dispatch(fetchProduct(productId))
