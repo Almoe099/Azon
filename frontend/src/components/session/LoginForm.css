@@ -106,6 +106,7 @@ button:hover {
   top: 50%;
   transform: translate(-50%, -50%);
   margin-top: 25px;
+  margin-bottom: 20px;
 }
 
 .line .newAccount {

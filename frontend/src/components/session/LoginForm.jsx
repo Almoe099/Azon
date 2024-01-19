@@ -86,10 +86,10 @@ const LoginForm = () => {
       </div>
         <div className='line'>
           <p className='newAccount'>New to Azon?</p>
-        </div>
           <Link to={'/signup'}>
             <button className="createButton" type="submit">Create your Azon account</button>
           </Link>
+        </div>
           <Footer />
     </div>
   );

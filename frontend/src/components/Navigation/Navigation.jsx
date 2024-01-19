@@ -33,8 +33,10 @@ function Navigation() {
   return (
     <div className="header">
       <div className="headerRow1">
+        <Link to={'/'}>
+            <img className="logo" src={azonImage} />
+        </Link>
 
-        <img className="logo" src={azonImage} />
 
         <div className="searchBar">
           <input

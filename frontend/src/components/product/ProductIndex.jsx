@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchProducts, selectProductsArray } from "../../store/product";
+import { Link } from "react-router-dom";
 import "./ProductIndex.css";
 
 const ProductsIndex = () => {
@@ -20,7 +21,9 @@ const ProductsIndex = () => {
             <div className="card">
                 <img className="productImage" src="https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?cs=srgb&dl=pexels-math-90946.jpg&fm=jpg" alt="Product Image" />
             <div className="card-content">
-              <p className="productName">{product.name}</p>
+              <Link to={`/products/${product.id}`}>
+                <p className="productName">{product.name}</p>
+              </Link>
               <p className="productReview">5 Stars</p>
               <p className="productPrice">${product.price}</p>
             </div>
