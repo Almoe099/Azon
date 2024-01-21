@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchProduct, selectProduct } from "../../store/product";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import DeliveryComponent from "./date";
 import "./ProductShow.css";
 
