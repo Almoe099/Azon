@@ -120,14 +120,13 @@
     flex-direction: column;
     border: 1px solid #d5d9d9;
     width: 240px;
-    height: 400px;
+    height: 560px;
     padding-top: 14px;
     padding-bottom: 14px;
     padding-left: 18px;
     padding-right: 18px;
     border-radius: 10px;
     margin-top: 100px;
-    /* border: solid 3px red; */
 }
 
 .freeR {
@@ -149,21 +148,32 @@
 }
 
 .quantityContainer {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
     
 }
 
 .quantity {
-    font-size: 13px;
-    margin-right: 5px;
-    
+    margin-bottom: 10px;
 }
 
 .productQuantity {
     background-color: #f0f2f2;
-    width: 50px;
-    border-radius: 5px;
+    border-radius: 8px;
+    border: solid 1px rgba(15, 17, 17, 0.15);
+    font-size: 14px;
+    width: 210px;
+    height: 35px;
+    display: block;
     outline-color: #08c6de;
+    cursor: pointer;
+    box-shadow: rgba(15, 17, 17, 0.15);
+
+    &:hover {
+        background-color: #e3e6e6;
+    }
+
 }
 
 .cartButton {
@@ -195,4 +205,58 @@
 
 .buyButton:hover {
     background-color: #fa8900;
+}
+
+
+.cartFooterContainer{
+    display: flex;
+    flex-direction: row;
+}
+
+.firstFooter {
+    width: 68px;
+    margin-bottom: 5px;
+}
+
+.start {
+    font-size: 12px;
+    line-height: 16px;
+    text-align: start;
+    letter-spacing: normal;
+    color: #565959;
+}
+
+
+.end {
+    display: flex;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: start;
+    letter-spacing: normal;
+    color: #0f1111;
+    padding: 2px;
+}
+
+.firstFooter1 {
+    width: 68px;
+    padding-right: 26.5px;
+    /* border: solid 3px red; */
+
+}
+
+
+
+.returns {
+    display: flex;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: start;
+    letter-spacing: normal;
+    color: #007185;
+    padding: 1px;
+    margin-bottom: 10px;
+
+  &:hover{
+    color: #c7511f;
+  }
 }

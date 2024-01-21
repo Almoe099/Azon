@@ -19,7 +19,6 @@ const ProductShow = () => {
     return <div>Loading...</div>;
   }
 
-
   return (
     <>
       <div className="fillerdiv"></div>
@@ -46,36 +45,36 @@ const ProductShow = () => {
           <h3 className="productPriceShow">${product.price}</h3>
 
           <div className="productTypeContainer">
-            <h5 className="typeContainer">
+            <div className="typeContainer">
               <p className="type">Category:</p>
-            </h5>
-            <h5 className="productCategory">
+            </div>
+            <div className="productCategory">
               <p>{product.category}</p>
-            </h5>
+            </div>
           </div>
           <div className="productTypeContainer">
-            <h5 className="typeContainer">
+            <div className="typeContainer">
               <p className="type">Brand:</p>
-            </h5>
-            <h5 className="productBrand">
+            </div>
+            <div className="productBrand">
               <p>{product.brand}</p>
-            </h5>
+            </div>
           </div>
           <div className="productTypeContainer">
-            <h5 className="typeContainer">
+            <div className="typeContainer">
               <p className="type">Dimensions:</p>
-            </h5>
-            <h5 className="productDimensions">
+            </div>
+            <div className="productDimensions">
               <p>{product.dimensions}</p>
-            </h5>
+            </div>
           </div>
           <div className="productTypeContainer">
-            <h5 className="typeContainer">
+            <div className="typeContainer">
               <p className="type">Weight:</p>
-            </h5>
-            <h5 className="productWeight">
+            </div>
+            <div className="productWeight">
               <p>{product.weight}</p>
-            </h5>
+            </div>
           </div>
 
           <div className="lineSeparator"></div>
@@ -97,14 +96,12 @@ const ProductShow = () => {
 
           <form>
             <div className="quantityContainer">
-              <span className="quantity"> Quantity:</span>
-              <select className="productQuantity" name="productQuantity">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
+            <span className="quantity">Quantity:</span>
+            <select className="productQuantity" name="productQuantity" > 
+              {Array.from({ length: 10 }, (_, index) => (
+              <option key={index + 1} value={index + 1}>{index + 1}</option>
+              ))}
+            </select>
             </div>
             <button className="cartButton" type="submit">
               Add to Cart
@@ -114,13 +111,44 @@ const ProductShow = () => {
           </button>
 
           </form>
-          <div className="cartFooter">
-            <span>Payment</span>
-            <span>Payment</span>
-            <span>Payment</span>
-            <span>Payment</span>
-            <span>Payment</span>
+
+        
+          <div className="cartFooterContainer">
+            <div className="firstFooter">
+              <span className="start">Ships from</span>
+            </div>
+            <div className="SecondFooter">
+              <span className="end">Azon.com</span>
+            </div>
           </div>
+
+          <div className="cartFooterContainer">
+            <div className="firstFooter">
+              <span className="start">Sold by</span>
+            </div>
+            <div className="SecondFooter">
+              <span className="end">Azon.com</span>
+            </div>
+          </div>
+
+          <div className="cartFooterContainer">
+            <div className="firstFooter1">
+              <span className="start">Returns</span>
+            </div>
+            <div className="SecondFooter">
+              <span className="returns">Eligible for Return, Refund or Replacement within 30 days of receipt</span>
+            </div>
+          </div>
+
+          <div className="cartFooterContainer">
+            <div className="firstFooter">
+              <span className="start">Payment</span>
+            </div>
+            <div className="SecondFooter">
+              <span className="returns">Secure transaction</span>
+            </div>
+          </div>
+
         </div>
       </div>
     </>
