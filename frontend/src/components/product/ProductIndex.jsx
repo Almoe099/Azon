@@ -19,7 +19,7 @@ const ProductsIndex = () => {
         {products.map((product) => (
           <div key={product.id} className="product-card">
             <div className="card">
-                <img className="productImage" src="https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?cs=srgb&dl=pexels-math-90946.jpg&fm=jpg" alt="Product Image" />
+                <img className="productImage" src={product.photoUrl} alt="Product Image" />
             <div className="card-content">
               <Link to={`/products/${product.id}`}>
                 <p className="productName">{product.name}</p>
