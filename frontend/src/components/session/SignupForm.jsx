@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import azonHome from "../../pictures/azonHome.png";
 import './SignupForm.css';
-import Footer from "./AuthFooter";
+import AuthFooter from "./AuthFooter";
 
 
 
@@ -83,7 +83,7 @@ function SignupForm() {
           <p className='footerLogin'>Already have an account? <a href="/login">Sign in</a> </p>
 
         </form>
-        <Footer />
+        <AuthFooter />
        </div>
       </>
     );

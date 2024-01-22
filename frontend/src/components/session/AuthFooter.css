@@ -1,4 +1,4 @@
-.footer {
+.authFooter {
     position: fixed;
     margin-top: 80px;
     left: 0;
@@ -7,4 +7,20 @@
     padding: 10px;
     text-align: center;
     border-top: 1px solid #ccc;
+}
+
+.icons {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.githubIcon {
+    padding: 10px;
+}
+.linkedinIcon {
+    padding: 10px;
 }

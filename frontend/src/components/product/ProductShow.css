@@ -23,11 +23,14 @@
     height: auto;
     max-height: 500px;
     margin-right: 40px;
+    /* border: solid 3px red; */
 }
 
 .productImageShow {
     max-height: 100%;
     max-width: 100%;
+    padding: 80px;
+    object-fit:contain;
 }
 
 .productDetailsContainer {
@@ -257,4 +260,8 @@
   &:hover{
     color: #c7511f;
   }
+}
+
+.productFooter {
+    margin-top: 300px;
 }

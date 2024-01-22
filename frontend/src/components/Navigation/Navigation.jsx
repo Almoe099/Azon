@@ -37,7 +37,6 @@ function Navigation() {
             <img className="logo" src={azonImage} />
         </Link>
 
-
         <div className="searchBar">
           <input
             type="text"

@@ -1,0 +1,92 @@
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    background-color: #232f3e;
+    color: #ffffff;
+    padding: 50px;
+}
+
+.footer-section {
+    max-width: 200px;
+    height: 150px;
+}
+
+.footer-section h4 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section li {
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.footer-section a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+.new-customer-label {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    justify-content: center;
+}
+
+.new-customer-label a {
+    color: #0055aa;
+    text-decoration: none;
+    margin-left: 5px;
+    /* Adjust the margin as needed */
+}
+
+.new-customer-label a:hover {
+    text-decoration: underline;
+    color: #e47911;
+}
+
+.bottomAuth {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.auth-signin-button {
+    background-color: #ffd814;
+    height: 28px;
+    width: 230px;
+    box-sizing: border-box;
+    font-size: 12px;
+    text-align: center;
+    line-height: 12px;
+    letter-spacing: normal;
+    font-weight: 700;
+}
+
+.back-to-top {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: #37475a;
+    color: #ffffff;
+    height: 30px;
+    padding: 10px;
+    padding-top: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.back-to-top:hover {
+    background-color: #485769;
+}

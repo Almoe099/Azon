@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { fetchProduct, selectProduct } from "../../store/product";
 import { useEffect } from "react";
 import DeliveryComponent from "./date";
+import Footer from "../Navigation/Footer";
 import "./ProductShow.css";
 
 const ProductShow = () => {
@@ -150,6 +151,9 @@ const ProductShow = () => {
           </div>
 
         </div>
+      </div>
+      <div className="productFooter">
+        <Footer />
       </div>
     </>
   );

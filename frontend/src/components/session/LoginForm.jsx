@@ -3,7 +3,7 @@ import * as sessionActions from "../../store/session";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, Navigate } from "react-router-dom";
 import azonHome from "../../pictures/azonHome.png";
-import Footer from "./AuthFooter";
+import AuthFooter from "./AuthFooter";
 import './LoginForm.css';
 
 const LoginForm = () => {
@@ -90,7 +90,7 @@ const LoginForm = () => {
             <button className="createButton" type="submit">Create your Azon account</button>
           </Link>
         </div>
-          <Footer />
+          <AuthFooter />
     </div>
   );
 };
