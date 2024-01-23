@@ -4,7 +4,8 @@ import { fetchProduct, selectProduct } from "../../store/product";
 import { useEffect, useState } from "react";
 import DeliveryComponent from "./date";
 import Footer from "../Navigation/Footer";
-import loading from "../../pictures/loading.jpg";
+// import loading from "../../pictures/loading.jpg";
+// import loadingCopy from "../../pictures/loadingCopy.jpg";
 import "./ProductShow.css";
 
 const ProductShow = () => {
@@ -13,24 +14,24 @@ const ProductShow = () => {
 
   const product = useSelector(selectProduct(productId));
 
-  const [selectedImage, setSelectedImage] = useState(loading);
+  // const [thumbnails, setThumbnails] = useState([loading, loadingCopy]);
+  const [selectedImage, setSelectedImage] = useState(product.photoUrl[0]);
 
   useEffect(() => {
-    // if (!product) {
       dispatch(fetchProduct(productId));
-    // }
   }, [dispatch, productId]);
 
-  useEffect((product) => {
-    if(product && product.photoUrl){
-      setSelectedImage(product.photoUrl[0])
-    }
-  }, [product]);
+  // useEffect((product) => {
+  //   if(product && product.photoUrl){
+  //     setThumbnails(product.photosUrl);
+  //     setSelectedImage(thumbnails[0]);
+  //   }
+  // }, [thumbnails, product]);
 
-  // const handleImageChange = (e) => {
-  //   setSelectedImage(e.target.value);
-  //   console.log(e.target);
-  // };
+  const handleImageChange = (e) => {
+    setSelectedImage(e.target.scr);
+    // console.log(e.target);
+  };
 
   if (!product) {
     return <div>Loading...</div>;
@@ -40,9 +41,9 @@ const ProductShow = () => {
     <>
       <div className="fillerdiv"></div>
       <div className="productCardItem">
-        {/* <div className="leftColumn">
+        <div className="leftColumn">
           <div className="imageCarousel">
-            {product.photoUrl && product.photoUrl.map((photo, index) => (
+            {/* {product.photoUrl && product.photoUrl.map((photo, index) => (
               <label key={index} className="photo-label">
                 <input
                   type="radio"
@@ -60,15 +61,16 @@ const ProductShow = () => {
                   }`}
                 />
               </label>
-            ))}
+            ))} */}
           </div>
-        </div> */}
         <div className="productImageContainer">
           <img
             className="productImageShow"
-            src={product.photoUrl}
+            onMouseOver={handleImageChange}
+            src={product.photoUrl[0]}
             alt="Product Image"
           />
+        </div>
         </div>
 
         <div className="productDetailsContainer">

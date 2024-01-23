@@ -45,6 +45,7 @@ require "open-uri"
     description: "welcome to azon * Best Place to Shop"
   })
   camera.photos.attach(io: URI.open("https://azon1-seeds.s3.amazonaws.com/CameraAmazonTest.webp"), filename: "camera.webp")
+  puts "creating camera"
 
   amazon_fire_stick = Product.create!(
     name: "All-new Amazon Fire TV Stick 4K streaming device, more than 1.5 million movies and TV episodes, supports Wi-Fi 6, watch free & live TV",
@@ -55,7 +56,10 @@ require "open-uri"
     weight: "43.5 g",
     description: "Advanced 4K streaming - Elevate your entertainment with the next generation of our best-selling 4K stick, with improved streaming performance. Wi-Fi 6 support - Enjoy smooth 4K streaming, even when other devices are connected to your router. Cinematic experience - Watch in vibrant 4K Ultra HD with support for Dolby Vision, HDR10+, and immersive Dolby Atmos audio. Endless entertainment - Stream more than 1.5 million movies and TV episodes. Watch favorites from Netflix, Prime Video, Disney+, Max, and more. Subscription fees may apply"
   )
-  amazon_fire_stick.photos.attach(io: URI.open("https://azon1-seeds.s3.amazonaws.com/fireStick.jpg"), filename: "amazon_fire_stick.jpg")
+  # amazon_fire_stick.photos.attach(io: URI.open("https://azon1-seeds.s3.amazonaws.com/amazon_fire_stick.jpg"), filename: "fire_stick.jpg")
+  amazon_fire_stick.photos.attach(io: URI.open("https://azon1-seeds.s3.amazonaws.com/fireStick.jpg"), filename: "fire_stick.jpg")
+  # amazon_fire_stick.photos.attach(io: URI.open("https://azon1-seeds.s3.amazonaws.com/azonProject/tozo.jpg"), filename: "fire_stick1.jpg")
+  # amazon_fire_stick.photos.attach(io: URI.open("https://azon1-seeds.s3.amazonaws.com/azonProject/exho_show.jpg"), filename: "fire_stick2.jpg")
 
   # Example 2
   echo_show = Product.create!(
