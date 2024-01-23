@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchProduct, selectProduct } from "../../store/product";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import DeliveryComponent from "./date";
 import Footer from "../Navigation/Footer";
 // import loading from "../../pictures/loading.jpg";
@@ -15,7 +15,7 @@ const ProductShow = () => {
   const product = useSelector(selectProduct(productId));
 
   // const [thumbnails, setThumbnails] = useState([loading, loadingCopy]);
-  const [selectedImage, setSelectedImage] = useState(product.photoUrl[0]);
+  // const [selectedImage, setSelectedImage] = useState(product.photoUrl[0]);
 
   useEffect(() => {
       dispatch(fetchProduct(productId));
@@ -28,10 +28,10 @@ const ProductShow = () => {
   //   }
   // }, [thumbnails, product]);
 
-  const handleImageChange = (e) => {
-    setSelectedImage(e.target.scr);
-    // console.log(e.target);
-  };
+  // const handleImageChange = (e) => {
+  //   setSelectedImage(e.target.scr);
+  //   // console.log(e.target);
+  // };
 
   if (!product) {
     return <div>Loading...</div>;
@@ -66,7 +66,7 @@ const ProductShow = () => {
         <div className="productImageContainer">
           <img
             className="productImageShow"
-            onMouseOver={handleImageChange}
+            // onMouseOver={handleImageChange}
             src={product.photoUrl[0]}
             alt="Product Image"
           />
