@@ -10,7 +10,7 @@ import ProductsIndex from "./components/product/ProductIndex";
 import ProductShow from "./components/product/ProductShow";
 import { useLocation } from "react-router-dom";
 import CartIndex from "./components/cart/CartIndex";
-import CartShow from "./components/cart/CartShow";
+import Checkout from "./components/checkout/CheckOut";
 
 function Layout(){
 
@@ -74,8 +74,8 @@ const router = createBrowserRouter([
         element: <CartIndex />
       },
       {
-        path:'cartshow',
-        element: <CartShow />
+        path: 'checkout',
+        element: <Checkout />
       }
 
     ]

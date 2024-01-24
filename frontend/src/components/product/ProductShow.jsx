@@ -45,9 +45,6 @@ const ProductShow = () => {
     setQuantity(parseInt(e.target.value, 10));
   }
 
-  console.log(quantity)
-  console.log(carts)
-
   const handleCart= async (e) => {
     e.preventDefault();
     if (user) {
@@ -56,13 +53,9 @@ const ProductShow = () => {
 
       const existingCartItem = carts.find(
         (item) => item.productId === product.id,
-        console.log("aaaaa")
       );
-      console.log(existingCartItem)
-      console.log("cart1")
       
       if (existingCartItem) {
-        console.log("cart2")
         const updatedCartItem = {
           ...existingCartItem,
           quantity: existingCartItem.quantity + quantity,
@@ -70,7 +63,6 @@ const ProductShow = () => {
         
         dispatch(updateCart(updatedCartItem));
       } else {
-        console.log("cart3")
         dispatch(createCart(productToAdd));
       }
     } else {

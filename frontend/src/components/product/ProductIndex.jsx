@@ -12,6 +12,11 @@ const ProductsIndex = () => {
     dispatch(fetchProducts());
   }, [dispatch]);
 
+
+  // if (!products.photoUrl) {
+  //   return <div>Loading...</div>;
+  // }
+
   return (
     <div className="productsIndexPage">
       <div className="productsIndexDivider"></div>

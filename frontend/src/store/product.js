@@ -1,4 +1,5 @@
 import { csrfFetch } from "./csrf";
+import { REMOVE_USER } from "./session";
 
 export const RECEIVE_PRODUCT = 'products/RECEIVE_PRODUCT';
 export const RECEIVE_PRODUCTS = 'products/RECEIVE_PRODUCTS';
@@ -47,19 +48,15 @@ export const fetchProduct = (productId) => async (dispatch) => {
 
 
 const productsReducer = (state = {}, action) => {
-  // const newState = { ...state };
-  // Object.freeze(state)
-
   switch (action.type) {
-  case RECEIVE_PRODUCTS:
-    return action.products;
-  case RECEIVE_PRODUCT:
-    // newState[action.product.id] = action.product;
-    // return {...state, ...action.product}
-    return {[action.product.id]: {...action.product} }
-    // return newState;
-  default:
-    return state;
+    case RECEIVE_PRODUCTS:
+      return { ...state, ...action.products };
+    case RECEIVE_PRODUCT:
+      return { ...state, [action.product.id]: action.product };
+    case REMOVE_USER:
+      return {}
+    default:
+      return state;
   }
 };
 

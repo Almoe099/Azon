@@ -8,17 +8,21 @@ import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import './Navigation.css';
+import { memoizedSelectCarts } from "../../store/cart";
 
 function Navigation() {
   const user = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const carts = useSelector(memoizedSelectCarts);
 
   const logout = (e) => {
     e.preventDefault();
     dispatch(sessionActions.logout());
     navigate('/')
   };
+
+  const totalQuantity = carts.reduce((total, item) => total + item.quantity, 0);
 
   const handleSubmit = (e) => {
     if (user) {
@@ -78,8 +82,10 @@ function Navigation() {
           </div>
 
           <div className="optionIcon">
-            <img className="icon" src={CartIcon} />
-            <span className="cartCount">0</span>
+            <Link to={user ? '/cart' : '/login'}>
+              <img className="icon" src={CartIcon} />
+            </Link>
+            <span className="cartCount">{totalQuantity}</span>
           </div>
         </div>
       </div>
