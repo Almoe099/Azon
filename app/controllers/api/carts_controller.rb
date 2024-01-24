@@ -1,10 +1,20 @@
 class Api::CartsController < ApplicationController
 
   wrap_parameters include: Cart.attribute_names + ['quantity', 'userId', 'productId']
+  # before_action
 
   def index
     @carts = current_user.carts
     render :index
+  end
+
+  def show
+    @cart = Cart.find_by(id: params[:id])
+    if @cart
+      render :show
+    else
+      render json: @cart.errors.full_messages, status: :unprocessable_entity
+    end
   end
 
 
@@ -14,7 +24,7 @@ class Api::CartsController < ApplicationController
     if @cart.save
       render :show
     else
-      render json: @cart.errors.full_messages
+      render json: { errors: ['Cart exist.'] }, status: :unauthorized
     end
 
   end

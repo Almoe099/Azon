@@ -1,16 +1,24 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchProduct, selectProduct } from "../../store/product";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import DeliveryComponent from "./date";
 import Footer from "../Navigation/Footer";
 // import loading from "../../pictures/loading.jpg";
 // import loadingCopy from "../../pictures/loadingCopy.jpg";
 import "./ProductShow.css";
+import { createCart, updateCart, memoizedSelectCarts } from "../../store/cart";
+import { useNavigate } from "react-router-dom";
+
 
 const ProductShow = () => {
   const dispatch = useDispatch();
   const { productId } = useParams();
+  const product_id = parseInt(productId);
+  const navigate = useNavigate();
+  const user = useSelector(state => state.session.user);
+  const carts = useSelector(memoizedSelectCarts);
+  const [quantity, setQuantity] = useState(1)
 
   const product = useSelector(selectProduct(productId));
 
@@ -32,6 +40,46 @@ const ProductShow = () => {
   //   setSelectedImage(e.target.scr);
   //   // console.log(e.target);
   // };
+
+  const handleQuantity = (e) => {
+    setQuantity(parseInt(e.target.value, 10));
+  }
+
+  console.log(quantity)
+  console.log(carts)
+
+  const handleCart= async (e) => {
+    e.preventDefault();
+    if (user) {
+      const user_id = user.id;
+      const productToAdd = { quantity, product_id, user_id };
+
+      const existingCartItem = carts.find(
+        (item) => item.productId === product.id,
+        console.log("aaaaa")
+      );
+      console.log(existingCartItem)
+      console.log("cart1")
+      
+      if (existingCartItem) {
+        console.log("cart2")
+        const updatedCartItem = {
+          ...existingCartItem,
+          quantity: existingCartItem.quantity + quantity,
+        };
+        
+        dispatch(updateCart(updatedCartItem));
+      } else {
+        console.log("cart3")
+        dispatch(createCart(productToAdd));
+      }
+    } else {
+      navigate('/login');
+    }
+  
+
+  };
+
 
   if (!product) {
     return <div>Loading...</div>;
@@ -120,8 +168,8 @@ const ProductShow = () => {
 
           <div className="lineSeparator"></div>
 
-          <ul className="productDescriptionContainer">
             <label className="about">About this item</label>
+          <ul className="productDescriptionContainer">
             {product.description.split(".").map((line, index) => {
               return (
                 <li className="productDescription" key={index}>
@@ -142,7 +190,7 @@ const ProductShow = () => {
           <form>
             <div className="quantityContainer">
               <span className="quantity">Quantity:</span>
-              <select className="productQuantity" name="productQuantity">
+              <select className="productQuantity" name="productQuantity" value={quantity} onChange={handleQuantity}>
                 {Array.from({ length: 10 }, (_, index) => (
                   <option key={index + 1} value={index + 1}>
                     {index + 1}
@@ -150,7 +198,7 @@ const ProductShow = () => {
                 ))}
               </select>
             </div>
-            <button className="cartButton" type="submit">
+            <button className="cartButton"  onClick={handleCart}>
               Add to Cart
             </button>
             <button className="buyButton" type="submit">

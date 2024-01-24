@@ -1,6 +1,7 @@
 import { csrfFetch } from "./csrf";
 import { createSelector } from 'reselect';
 
+
 export const RECEIVE_CARTS = "cart/RECEIVE_CARTS";
 export const RECEIVE_CART = "cart/RECEIVE_CART";
 export const REMOVE_CART = "cart/REMOVE_CART";
@@ -21,10 +22,10 @@ export const removeCart = (cartId) => ({
 });
 
 export const selectCart = (cartId) => state => {
-    return state.carts[cartId]
+    return state.cart[cartId]
 }
 
-export const selectCarts = (state) => Object.values(state.carts);
+export const selectCarts = (state) => Object.values(state.cart);
 
 export const memoizedSelectCarts = createSelector(
   [selectCarts],

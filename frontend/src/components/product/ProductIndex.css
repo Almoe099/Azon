@@ -23,6 +23,7 @@
   position: relative; /* Add position relative */
   box-sizing: border-box;
   margin-bottom: 20px;
+  background-color: white;
   /* border: solid 3px blue; */
 }
 

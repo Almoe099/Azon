@@ -1,4 +1,5 @@
 import { csrfFetch } from "./csrf";
+import { fetchCarts } from "./cart";
 
 const SET_USER = "session/setUser";
 const REMOVE_USER = "session/removeUser";
@@ -26,6 +27,7 @@ export const restoreSession = () => async dispatch => {
     storeCSRFToken(response);
     const data = await response.json();
     dispatch(setUser(data.user));
+    dispatch(fetchCarts())
     return response;
 };
 
@@ -36,6 +38,7 @@ export const login = ({ email, password }) => async dispatch => {
     });
     const data = await response.json();
     dispatch(setUser(data.user));
+    dispatch(fetchCarts())
     return response;
 };
 

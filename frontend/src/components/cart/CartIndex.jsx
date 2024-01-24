@@ -7,9 +7,11 @@ import { fetchCarts, memoizedSelectCarts } from '../../store/cart'
 
 
 const CartIndex = () => {
-    const dispatch = useDispatch
+    const dispatch = useDispatch();
     const products = useSelector(selectProductsArray)
     const carts = useSelector(memoizedSelectCarts)
+    
+    console.log(products)
     console.log(carts)
 
     useEffect(() => {

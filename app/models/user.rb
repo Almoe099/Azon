@@ -4,7 +4,7 @@ class User < ApplicationRecord
   validates :session_token, presence: true, uniqueness: true
   validates :password, length: { in: 6..40 }, allow_nil: true
 
-  has_one :carts,
+  has_many :carts,
   foreign_key: :user_id,
   class_name: :Cart,
   dependent: :destroy

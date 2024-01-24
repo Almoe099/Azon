@@ -14,8 +14,6 @@ class Product < ApplicationRecord
 
 end
 
-# Outdoor
 # Furniture
 # Appliances
-# Sports & Outdoors
 # Art & Craft
