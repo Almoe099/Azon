@@ -5,15 +5,17 @@ class Product < ApplicationRecord
 
   has_many_attached :photos
 
-  # belongs_to :cart
+  has_many :carts,
+  foreign_key: :product_id,
+  class_name: :Cart,
+  dependent: :destroy
+
   # has_many :reviews
 
 end
 
 # Outdoor
 # Furniture
-# Fashion
 # Appliances
 # Sports & Outdoors
 # Art & Craft
-# Office

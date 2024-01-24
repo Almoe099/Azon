@@ -1,4 +1,5 @@
 import { csrfFetch } from "./csrf";
+import { createSelector } from 'reselect';
 
 export const RECEIVE_CARTS = "cart/RECEIVE_CARTS";
 export const RECEIVE_CART = "cart/RECEIVE_CART";
@@ -24,6 +25,11 @@ export const selectCart = (cartId) => state => {
 }
 
 export const selectCarts = (state) => Object.values(state.carts);
+
+export const memoizedSelectCarts = createSelector(
+  [selectCarts],
+  (carts) => Object.values(carts)
+);
 
 
 export const fetchCarts = () => async (dispatch) => {

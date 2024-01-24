@@ -9,6 +9,8 @@ import * as sessionActions from "./store/session";
 import ProductsIndex from "./components/product/ProductIndex";
 import ProductShow from "./components/product/ProductShow";
 import { useLocation } from "react-router-dom";
+import CartIndex from "./components/cart/CartIndex";
+
 function Layout(){
 
   const dispatch = useDispatch()
@@ -65,6 +67,10 @@ const router = createBrowserRouter([
       {
         path: 'products/:productId',
         element: <ProductShow />
+      },
+      {
+        path: 'cart',
+        element: <CartIndex />
       }
 
     ]
