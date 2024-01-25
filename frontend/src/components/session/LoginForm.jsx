@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, Navigate } from "react-router-dom";
 import azonHome from "../../pictures/azonHome.png";
 import AuthFooter from "./AuthFooter";
-import './LoginForm.css';
+import "./LoginForm.css";
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -42,55 +42,61 @@ const LoginForm = () => {
 
   return (
     <div className="login">
-    <Link to={'/'}>
-      <img className="azonHome" src={azonHome} />
-    </Link>
+      <Link to={"/"}>
+        <img className="azonHome" src={azonHome} />
+      </Link>
 
       <div className="login-container">
         <h1>Sign in</h1>
-      <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           {errors.map((error) => (
-            <li key={error} className="errors">{error}</li>
+            <li key={error} className="errors">
+              {error}
+            </li>
           ))}
 
-        <label>
-          Email
-          <input
-            type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            className="input"
-          />
-        </label>
+          <label>
+            Email
+            <input
+              type="text"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              className="input"
+            />
+          </label>
 
-        <label>
-          Password
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </label>
+          <label>
+            Password
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </label>
 
-        <button type="submit">Continue</button>
+          <button type="submit">Continue</button>
 
-        <button type="submit" id="demo" onClick={demoLogin}>
-          Demo Login
-        </button>
+          <button type="submit" id="demo" onClick={demoLogin}>
+            Demo Login
+          </button>
 
-        <p className='footerText'>By continuing, you agree to Azon&apos;s Conditions of Use and Privacy Notice.</p>
-
-      </form>
+          <p className="footerText">
+            By continuing, you agree to Azon&apos;s Conditions of Use and
+            Privacy Notice.
+          </p>
+        </form>
       </div>
-        <div className='line'>
-          <p className='newAccount'>New to Azon?</p>
-          <Link to={'/signup'}>
-            <button className="createButton" type="submit">Create your Azon account</button>
-          </Link>
-        </div>
-          <AuthFooter />
+      <div className="line">
+        <p className="newAccount">New to Azon?</p>
+        <Link to={"/signup"}>
+          <button className="createButton" type="submit">
+            Create your Azon account
+          </button>
+        </Link>
+      </div>
+      <AuthFooter />
     </div>
   );
 };

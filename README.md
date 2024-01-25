@@ -16,7 +16,6 @@ Azon has been crafted as a sophisticated emulation of a widely embraced and reno
 
 ## Nav Bar
 
-
 Upon entering Azon, users will find themselves on the welcoming splash page adorned with the iconic navigation bar, providing them with easy access to explore the entire site at their convenience. From this starting point, users can seamlessly browse through the various offerings and navigate the platform effortlessly.
 
 <!-- [Nav Bar](Placeholder) -->
@@ -100,12 +99,166 @@ return (
       </div>
     </div>
 );
-
 ```
 
+## Sign Up / Sign IN
 
-## Sign In / Sign Out
+Users will have the flexibility to effortlessly sign up, log in, and log out of their Azon accounts, providing a seamless experience as they explore the platform. Once logged in, users can engage in a convenient shopping experience, adding desired products to their respective carts with ease.
+
+<!-- [Sign Up](Placeholder) -->
+
+```
+return (
+    <>
+      <Link to={"/"}>
+        <img className="azonHome" src={azonHome} />
+      </Link>
+      <div className="signup-container">
+        <h1>Create account</h1>
+        <form onSubmit={handleSubmit}>
+          {/* <ul> */}
+          {errors.map((error) => (
+            <li key={error} className="errors">
+              {error}
+            </li>
+          ))}
+          {/* </ul> */}
+
+          <label>
+            {" "}
+            Your name
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+              placeholder="First and last name"
+            />
+          </label>
+
+          <label>
+            {" "}
+            Email
+            <input
+              type="text"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </label>
+
+          <label>
+            {" "}
+            Password
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              placeholder="At least 6 characters"
+            />
+          </label>
+
+          <label>
+            {" "}
+            Re-enter password
+            <input
+              type="password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required
+            />
+          </label>
+
+          <button type="submit">Continue</button>
+
+          <button type="submit" id="demo" onClick={demoLogin}>
+            Demo Login
+          </button>
+
+          <p className="footerText">
+            By creating an account, you agree to Azon&apos;s Conditions of Use
+            and Privacy Notice.
+          </p>
+          <p className="footerLogin">
+            Already have an account? <a href="/login">Sign in</a>{" "}
+          </p>
+        </form>
+        <AuthFooter />
+      </div>
+    </>
+);
+```
+
+<!-- [Sign In](Placeholder) -->
+
+```
+return (
+    <div className="login">
+      <Link to={"/"}>
+        <img className="azonHome" src={azonHome} />
+      </Link>
+
+      <div className="login-container">
+        <h1>Sign in</h1>
+        <form onSubmit={handleSubmit}>
+          {errors.map((error) => (
+            <li key={error} className="errors">
+              {error}
+            </li>
+          ))}
+
+          <label>
+            Email
+            <input
+              type="text"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              className="input"
+            />
+          </label>
+
+          <label>
+            Password
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </label>
+
+          <button type="submit">Continue</button>
+
+          <button type="submit" id="demo" onClick={demoLogin}>
+            Demo Login
+          </button>
+
+          <p className="footerText">
+            By continuing, you agree to Azon&apos;s Conditions of Use and
+            Privacy Notice.
+          </p>
+        </form>
+      </div>
+      <div className="line">
+        <p className="newAccount">New to Azon?</p>
+        <Link to={"/signup"}>
+          <button className="createButton" type="submit">
+            Create your Azon account
+          </button>
+        </Link>
+      </div>
+      <AuthFooter />
+    </div>
+);
+```
+
 ## Product Index
+
+
+
+
 ## Product Show
 ## Cart
 
