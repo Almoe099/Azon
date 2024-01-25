@@ -13,7 +13,97 @@ Azon has been crafted as a sophisticated emulation of a widely embraced and reno
 * Asset Storage: AWS Simple Cloud Storage (S3)
 
 # MVPs
+
 ## Nav Bar
+
+
+Upon entering Azon, users will find themselves on the welcoming splash page adorned with the iconic navigation bar, providing them with easy access to explore the entire site at their convenience. From this starting point, users can seamlessly browse through the various offerings and navigate the platform effortlessly.
+
+<!-- [Nav Bar](Placeholder) -->
+
+```
+return (
+    <div className="header">
+      <div className="headerRow1">
+        <Link to={"/"}>
+          <img className="logo" src={azonImage} />
+        </Link>
+
+        <div className="searchBar">
+          <input
+            type="text"
+            className="inputSearch"
+            placeholder="Search Azon"
+          />
+
+          <img className="searchIcon" src={SearchIcon} id="search" />
+        </div>
+
+        <div className="nav">
+          <div className="optionIcon">
+            <Link to={"https://github.com/Almoe099"}>
+              <img className="icon" src={orangeLinkedin} />
+            </Link>
+          </div>
+
+          <div className="optionIcon">
+            <Link to={"https://github.com/Almoe099"}>
+              <img className="icon" src={orangeGithub} />
+            </Link>
+          </div>
+
+          <div className="option">
+            <span className="optionLineOne">
+              Hello, {!user ? "sign in" : user.name}
+            </span>
+            <div className="account-dropDown">
+              <span className="optionLineTwo">Accounts & Lists</span>
+              <div className="dropdown-content">
+                <Link to={user ? "/" : "/login"}>
+                  <button
+                    type="submit"
+                    className="signin-button"
+                    onClick={handleSubmit}
+                  >
+                    {!user ? "Sign in" : "Sign out"}
+                  </button>
+                </Link>
+                <label className="new-customer-label">
+                  {!user ? "New customer?" : ""}
+                  <Link to={"/signup"}>{!user ? "Start here." : ""}</Link>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div className="option">
+            <span className="optionLineOne">Returns</span>
+            <span className="optionLineTwo">& Orders</span>
+          </div>
+
+          <div className="optionIcon">
+            <Link to={"/cart"}>
+              <img className="icon" src={CartIcon} />
+            </Link>
+            <span className="cartCount">{totalQuantity}</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="headerRow2">
+        <div className="categories">
+          <div className="optionCategory">Best Sellers</div>
+          <div className="optionCategory">New Releases</div>
+          <div className="optionCategory">Today&apos;s Deals</div>
+          <div className="optionCategory">Prime</div>
+        </div>
+      </div>
+    </div>
+);
+
+```
+
+
 ## Sign In / Sign Out
 ## Product Index
 ## Product Show

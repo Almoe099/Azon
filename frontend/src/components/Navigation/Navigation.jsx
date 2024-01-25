@@ -8,7 +8,7 @@ import orangeLinkedin from "../../pictures/orangeLinkedin.png";
 import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import './Navigation.css';
+import "./Navigation.css";
 import { memoizedSelectCarts } from "../../store/cart";
 
 function Navigation() {
@@ -20,7 +20,7 @@ function Navigation() {
   const logout = (e) => {
     e.preventDefault();
     dispatch(sessionActions.logout());
-    navigate('/')
+    navigate("/");
   };
 
   const totalQuantity = carts.reduce((total, item) => total + item.quantity, 0);
@@ -31,15 +31,15 @@ function Navigation() {
       logout(e);
     } else {
       // If there is no user, navigate to the login page
-      navigate('/login');
+      navigate("/login");
     }
   };
 
   return (
     <div className="header">
       <div className="headerRow1">
-        <Link to={'/'}>
-            <img className="logo" src={azonImage} />
+        <Link to={"/"}>
+          <img className="logo" src={azonImage} />
         </Link>
 
         <div className="searchBar">
@@ -53,17 +53,16 @@ function Navigation() {
         </div>
 
         <div className="nav">
-          
           <div className="optionIcon">
-          <Link to={'https://github.com/Almoe099'}>
-            <img className="icon" src={orangeLinkedin} />
-        </Link>
+            <Link to={"https://github.com/Almoe099"}>
+              <img className="icon" src={orangeLinkedin} />
+            </Link>
           </div>
 
           <div className="optionIcon">
-          <Link to={'https://github.com/Almoe099'}>
-            <img className="icon" src={orangeGithub} />
-        </Link>
+            <Link to={"https://github.com/Almoe099"}>
+              <img className="icon" src={orangeGithub} />
+            </Link>
           </div>
 
           <div className="option">
@@ -73,13 +72,18 @@ function Navigation() {
             <div className="account-dropDown">
               <span className="optionLineTwo">Accounts & Lists</span>
               <div className="dropdown-content">
-                <Link to={user ? '/' : '/login'}>
-                  <button type="submit" className="signin-button" onClick={handleSubmit}>
-                  {!user ? "Sign in" : "Sign out"}
+                <Link to={user ? "/" : "/login"}>
+                  <button
+                    type="submit"
+                    className="signin-button"
+                    onClick={handleSubmit}
+                  >
+                    {!user ? "Sign in" : "Sign out"}
                   </button>
                 </Link>
                 <label className="new-customer-label">
-                  {!user ? "New customer?" : ""}<Link to={"/signup"}>{!user ? "Start here." : ""}</Link>
+                  {!user ? "New customer?" : ""}
+                  <Link to={"/signup"}>{!user ? "Start here." : ""}</Link>
                 </label>
               </div>
             </div>
@@ -91,7 +95,7 @@ function Navigation() {
           </div>
 
           <div className="optionIcon">
-            <Link to={'/cart'}>
+            <Link to={"/cart"}>
               <img className="icon" src={CartIcon} />
             </Link>
             <span className="cartCount">{totalQuantity}</span>
