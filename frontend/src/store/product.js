@@ -1,5 +1,6 @@
 import { csrfFetch } from "./csrf";
 import { REMOVE_USER } from "./session";
+import { createSelector } from "reselect";
 
 export const RECEIVE_PRODUCT = "products/RECEIVE_PRODUCT";
 export const RECEIVE_PRODUCTS = "products/RECEIVE_PRODUCTS";
@@ -14,7 +15,12 @@ export const recieveProduct = (product) => ({
   product,
 });
 
-export const selectProductsArray = (state) => Object.values(state.products);
+const selectProductsState = (state) => state.products;
+
+export const selectProductsArray = createSelector(
+  [selectProductsState],
+  (products) => Object.values(products)
+);
 
 export const selectProduct = (productId) => (state) => {
   return state.products[productId];

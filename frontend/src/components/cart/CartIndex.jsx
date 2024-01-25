@@ -30,7 +30,14 @@ const CartIndex = () => {
     });
   });
 
+  let more = false
+
+  if (quantity > 1) {
+    more = true
+  }
+
   return (
+    <>
     <div className="cartIndexContainer">
 
       <div className="CartPage">
@@ -95,23 +102,27 @@ const CartIndex = () => {
 
       
       {quantity && (
-        <div className="checkoutContainer">
+        <div className="checkoutContainerBox">
+
+            <span className="freeShipping">
+            Your order qualifies for FREE Shipping.
+            </span>
 
             <p className="totalPrice">
-                Subtotal({quantity}): ${total}.00
+                Subtotal ({quantity} {more ? "Items" : "Item"}): ${total}.00
             </p>
 
             <label className="giftContainer" htmlFor="radio">
-                This order contains a gift
                 <input
                 className="giftRadio"
                 type="checkbox"
                 value="This order contains a gift"
                 />
+                <span className="giftSpan">This order contains a gift</span>
             </label>
 
             {quantity && (
-                <NavLink className="checkoutContainer" to="/checkout">
+                <NavLink to="/checkout">
                 <button type="submit" className="checkoutButton">Checkout</button>
                 </NavLink>
             )}
@@ -119,10 +130,11 @@ const CartIndex = () => {
         </div>
         )}
 
+    </div>
         <div className="cartFooter">
           <Footer />
         </div>
-    </div>
+    </>
   );
 };
 

@@ -10,6 +10,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import "./Navigation.css";
 import { memoizedSelectCarts } from "../../store/cart";
+import { NavLink } from "react-router-dom";
 
 function Navigation() {
   const user = useSelector((state) => state.session.user);
@@ -104,11 +105,29 @@ function Navigation() {
       </div>
 
       <div className="headerRow2">
+        
         <div className="categories">
-          <div className="optionCategory">Best Sellers</div>
-          <div className="optionCategory">New Releases</div>
-          <div className="optionCategory">Today&apos;s Deals</div>
-          <div className="optionCategory">Prime</div>
+          <NavLink to={'/'}>
+            <div className="optionCategory">ALL</div>
+          </NavLink>
+          <NavLink to={'/?category=Electronics'}>
+            <div className="optionCategory">Electronics</div>
+          </NavLink>
+          <NavLink to={'/?category=Home & Kitchen'}>
+            <div className="optionCategory">Home & Kitchen</div>
+          </NavLink>
+          <NavLink to={'/?category=Gaming'}>
+            <div className="optionCategory">Gaming</div>
+          </NavLink>
+          <NavLink to={'/?category=Fashion'}>
+            <div className="optionCategory">Fashion</div>
+          </NavLink>
+          <NavLink to={'/?category=Office'}>
+            <div className="optionCategory">Office</div>
+          </NavLink>
+          <NavLink to={'/?category=Sports & Outdoors'}>
+            <div className="optionCategory">Sports & Outdoors</div>
+          </NavLink>
         </div>
       </div>
     </div>

@@ -25,7 +25,8 @@ export const selectCart = (cartId) => (state) => {
   return state.cart[cartId];
 };
 
-export const selectCarts = (state) => Object.values(state.cart);
+export const selectCarts = (state) => (state.cart) || {};
+// const selectCartItems = (state) => state?.cartItems || {};
 
 export const memoizedSelectCarts = createSelector([selectCarts], (carts) =>
   Object.values(carts)

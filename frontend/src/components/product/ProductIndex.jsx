@@ -1,20 +1,35 @@
 import { useDispatch, useSelector, shallowEqual } from "react-redux";
 import { useEffect } from "react";
 import { fetchProducts, selectProductsArray } from "../../store/product";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import "./ProductIndex.css";
 
 const ProductsIndex = () => {
   const dispatch = useDispatch();
-  const products = useSelector(selectProductsArray, shallowEqual);
-
+  let products = useSelector(selectProductsArray, shallowEqual);
+  const [params] = useSearchParams();
+  
   useEffect(() => {
     dispatch(fetchProducts());
   }, [dispatch]);
 
+
   // if (!products.photoUrl) {
   //   return <div>Loading...</div>;
   // }
+
+  if (params.get("category")) {
+    const categoryParam = params.get("category").replace(/[\W_]/g, ''); // Remove non-alphanumeric characters
+    const categoryRegex = new RegExp(categoryParam, 'i'); // Case-insensitive matching
+  
+    products = products.filter(product => {
+      const productCategoryWithoutSpaces = product.category.replace(/[\W_]/g, ''); // Remove non-alphanumeric characters
+      return productCategoryWithoutSpaces.match(categoryRegex);
+    });
+  }
+
+  
+
 
   return (
     <div className="productsIndexPage">
@@ -23,14 +38,14 @@ const ProductsIndex = () => {
         {products.map((product) => (
           <div key={product.id} className="product-card">
             <div className="card">
-              {/* <img className="productImage" src={product.photoUrl[0]} alt="Product Image" /> */}
-              <div className="card-content">
-                <Link to={`/products/${product.id}`}>
-                  <p className="productName">{product.name}</p>
-                </Link>
-                <p className="productReview">5 Stars</p>
-                <p className="productPrice">${product.price}</p>
-              </div>
+                {/* <img className="productImage" src={product.photoUrl[0]} alt="Product Image" /> */}
+            <div className="card-content">
+              <Link to={`/products/${product.id}`}>
+                <p className="productName">{product.name}</p>
+              </Link>
+              <p className="productReview">5 Stars</p>
+              <p className="productPrice">${product.price}</p>
+            </div>
             </div>
           </div>
         ))}
