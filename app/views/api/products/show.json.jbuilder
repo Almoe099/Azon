@@ -3,3 +3,4 @@ json.extract! @product, :id, :name, :price, :category, :brand, :dimensions, :wei
 # debugger
 json.photoUrl @product.photos.attached? ? @product.photos.map {|photo| photo.url } : nil
 # json.photoUrl @product.photo.attached? ? @product.photo.url : nil
+

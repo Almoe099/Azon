@@ -1,25 +1,60 @@
 # Welcome To Azon
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Check Out the [Live Site](https://azon.onrender.com/)
 
-Things you may want to cover:
+## Introduction
 
-* Ruby version
+Azon has been crafted as a sophisticated emulation of a widely embraced and renowned e-commerce platform, drawing inspiration from the success of Amazon. This multinational technology and e-commerce giant offers an extensive range of products and services, spanning online retail, cloud computing, digital streaming, and cutting-edge smart devices. In line with the Amazon experience, Azon empowers users to effortlessly navigate a dynamic homepage teeming with a plethora of product options. Upon clicking, users are seamlessly guided through an immersive journey, allowing them to explore in-depth details about authentic products on their dedicated pages. For anyone accustomed to the convenience of shopping on Amazon, Azon provides a user-friendly interface that simplifies the process of browsing, adding items to the cart, and shopping with unparalleled ease and efficiency. The technologies implemented in this project include:
 
-* System dependencies
+* Languages: Javascript, Ruby, HTML, and CSS
+* Frontend: React-Redux
+* Database: PostgreSQL
+* Hosting: Render
+* Asset Storage: AWS Simple Cloud Storage (S3)
 
-* Configuration
+# MVPs
+## Nav Bar
+## Sign In / Sign Out
+## Product Index
+## Product Show
+## Cart
 
-* Database creation
 
-* Database initialization
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## CC Licensing:
 * <a href="https://www.textstudio.com/">Font generator</a>
