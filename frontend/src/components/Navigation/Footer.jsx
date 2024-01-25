@@ -31,6 +31,7 @@ const Footer = () => {
 
     return (
         <>
+              {!user && (
             <div className="bottomAuth">
                 <Link to={user ? '/' : '/login'}>
                   <button type="submit" className="auth-signin-button" onClick={handleSubmit}>
@@ -41,6 +42,7 @@ const Footer = () => {
                   {!user ? "New customer?" : ""}<Link to={"/signup"}>{!user ? "Start here." : ""}</Link>
                 </label>
             </div>
+            )}
         <div className="back-to-top" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             Back to Top
         </div>

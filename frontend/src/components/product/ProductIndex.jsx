@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector, shallowEqual } from "react-redux";
 import { useEffect } from "react";
 import { fetchProducts, selectProductsArray } from "../../store/product";
 import { Link } from "react-router-dom";
@@ -6,7 +6,7 @@ import "./ProductIndex.css";
 
 const ProductsIndex = () => {
   const dispatch = useDispatch();
-  const products = useSelector(selectProductsArray);
+  const products = useSelector(selectProductsArray, shallowEqual);
 
   useEffect(() => {
     dispatch(fetchProducts());

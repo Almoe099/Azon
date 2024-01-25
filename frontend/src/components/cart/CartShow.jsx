@@ -8,7 +8,6 @@ import './CartShow.css'
 
 const CartShow = ( {cart} ) => {
 
-    const user = useSelector((state) => state.session.user);
     const dispatch = useDispatch();
     const [quantity, setQuantity] = useState(cart.quantity);
     const product = useSelector(selectProduct(cart.productId));

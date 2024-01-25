@@ -1,15 +1,13 @@
 import { csrfFetch } from "./csrf";
 import { REMOVE_USER } from "./session";
 
-export const RECEIVE_PRODUCT = 'products/RECEIVE_PRODUCT';
-export const RECEIVE_PRODUCTS = 'products/RECEIVE_PRODUCTS';
-
+export const RECEIVE_PRODUCT = "products/RECEIVE_PRODUCT";
+export const RECEIVE_PRODUCTS = "products/RECEIVE_PRODUCTS";
 
 export const recieveProducts = (products) => ({
   type: RECEIVE_PRODUCTS,
   products,
 });
-
 
 export const recieveProduct = (product) => ({
   type: RECEIVE_PRODUCT,
@@ -19,9 +17,8 @@ export const recieveProduct = (product) => ({
 export const selectProductsArray = (state) => Object.values(state.products);
 
 export const selectProduct = (productId) => (state) => {
-  return state.products[productId]
+  return state.products[productId];
 };
-
 
 export const fetchProducts = () => async (dispatch) => {
   const res = await csrfFetch("/api/products", {
@@ -34,7 +31,6 @@ export const fetchProducts = () => async (dispatch) => {
   dispatch(recieveProducts(productData));
 };
 
-
 export const fetchProduct = (productId) => async (dispatch) => {
   const res = await csrfFetch(`/api/products/${productId}`, {
     method: "GET",
@@ -46,7 +42,6 @@ export const fetchProduct = (productId) => async (dispatch) => {
   dispatch(recieveProduct(productData));
 };
 
-
 const productsReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_PRODUCTS:
@@ -54,7 +49,7 @@ const productsReducer = (state = {}, action) => {
     case RECEIVE_PRODUCT:
       return { ...state, [action.product.id]: action.product };
     case REMOVE_USER:
-      return {}
+      return {};
     default:
       return state;
   }

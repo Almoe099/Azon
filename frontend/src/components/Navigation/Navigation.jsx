@@ -82,7 +82,7 @@ function Navigation() {
           </div>
 
           <div className="optionIcon">
-            <Link to={user ? '/cart' : '/login'}>
+            <Link to={'/cart'}>
               <img className="icon" src={CartIcon} />
             </Link>
             <span className="cartCount">{totalQuantity}</span>
