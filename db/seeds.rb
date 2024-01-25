@@ -441,12 +441,5 @@ require "open-uri"
   #   description: ""
   # )
 
-  cart = Cart.create!(
-    quantity: 1,
-    product_id: 2,
-    user_id: 1
-  )
-
-
 
   puts "Done!"
