@@ -20,7 +20,7 @@ Upon entering Azon, users will find themselves on the welcoming splash page ador
 
 <!-- [Nav Bar](Placeholder) -->
 
-```
+``` js
 return (
     <div className="header">
       <div className="headerRow1">
@@ -108,7 +108,7 @@ Users will have the flexibility to effortlessly sign up, log in, and log out of 
 ### Sign Up 
 <!-- [Sign Up](Placeholder) -->
 
-```
+``` js
 return (
     <>
       <Link to={"/"}>
@@ -195,7 +195,7 @@ return (
 
 <!-- [Sign In](Placeholder) -->
 
-```
+``` js
 return (
     <div className="login">
       <Link to={"/"}>
@@ -263,7 +263,7 @@ Users will be able to browse through all the products Azon has to offer and will
 
 <!-- [Product Index](Placeholder) -->
 
-```
+``` js
 return (
     <div className="productsIndexPage">
       <div className="productsIndexDivider"></div>
@@ -293,7 +293,7 @@ Beyond the immersive product browsing experience on Azon, each product presents 
 
 <!-- [Product Show](Placeholder) -->
 
-```
+``` js
 return (
     <>
       <div className="fillerdiv"></div>
@@ -447,7 +447,7 @@ return (
 
 Azon not only provides you with the convenience of making a purchase but also keeps you well-informed about the delivery details of your selected products.
 
-```
+``` js
 const DeliveryComponent = () => {
   const [deliveryRange, setDeliveryRange] = useState("");
 
@@ -489,41 +489,11 @@ Unlocking the essence of convenience, Azon's cart feature is the enchanting forc
 
 <!-- [Cart](Placeholder) -->
 
+``` js
 
+UNFINISH CODE
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```
 
 ## CC Licensing:
 * <a href="https://www.textstudio.com/">Font generator</a>
@@ -541,3 +511,8 @@ Unlocking the essence of convenience, Azon's cart feature is the enchanting forc
 * <a target="_blank" href="https://icons8.com/icon/NTCUeTIie8CC/linkedin">LinkedIn</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
 
 * <a target="_blank" href="https://icons8.com/icon/E2KVOMc77Geo/github">GitHub</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+
+
+## Thanks
+
+Despite Azon being developed within a remarkably brief timeframe of just 14 days, the process was filled with enjoyment. I trust that you'll relish future iterations of this Amazon-inspired clone.
