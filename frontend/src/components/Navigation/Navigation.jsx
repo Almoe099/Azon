@@ -3,7 +3,8 @@ import { useSelector } from "react-redux";
 import azonImage from "../../pictures/azon.png";
 import SearchIcon from "../../pictures/search.png";
 import CartIcon from "../../pictures/cart.png";
-import flag from "../../pictures/usaFlag.png";
+import orangeGithub from "../../pictures/orangeGithub.png";
+import orangeLinkedin from "../../pictures/orangeLinkedin.png";
 import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -54,7 +55,15 @@ function Navigation() {
         <div className="nav">
           
           <div className="optionIcon">
-            <img className="icon" src={flag} />
+          <Link to={'https://github.com/Almoe099'}>
+            <img className="icon" src={orangeLinkedin} />
+        </Link>
+          </div>
+
+          <div className="optionIcon">
+          <Link to={'https://github.com/Almoe099'}>
+            <img className="icon" src={orangeGithub} />
+        </Link>
           </div>
 
           <div className="option">

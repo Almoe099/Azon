@@ -37,7 +37,7 @@ const CartShow = ( {cart} ) => {
     return (
         <div className="cart-item-container">
       <div className="cart-item-image">
-        <img src={product.photoUrl[0]} alt={product.name} />
+        {/* <img src={product.photoUrl[0]} alt={product.name} /> */}
       </div>
       <div className="cart-item-details">
         <NavLink to={`/products/${product.id}`} className="product-link">
