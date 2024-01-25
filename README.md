@@ -101,10 +101,11 @@ return (
 );
 ```
 
-## Sign Up / Sign IN
+## Sign Up / Sign In
 
 Users will have the flexibility to effortlessly sign up, log in, and log out of their Azon accounts, providing a seamless experience as they explore the platform. Once logged in, users can engage in a convenient shopping experience, adding desired products to their respective carts with ease.
 
+### Sign Up 
 <!-- [Sign Up](Placeholder) -->
 
 ```
@@ -190,6 +191,8 @@ return (
 );
 ```
 
+### Sign In
+
 <!-- [Sign In](Placeholder) -->
 
 ```
@@ -256,12 +259,235 @@ return (
 
 ## Product Index
 
+Users will be able to browse through all the products Azon has to offer and will be able to diffrienate between categories of thier interest
 
+<!-- [Product Index](Placeholder) -->
 
+```
+return (
+    <div className="productsIndexPage">
+      <div className="productsIndexDivider"></div>
+      <div className="products-container">
+        {products.map((product) => (
+          <div key={product.id} className="product-card">
+            <div className="card">
+              <img className="productImage" src={product.photoUrl[0]} alt="Product Image" />
+              <div className="card-content">
+                <Link to={`/products/${product.id}`}>
+                  <p className="productName">{product.name}</p>
+                </Link>
+                <p className="productReview">5 Stars</p>
+                <p className="productPrice">${product.price}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+);
+```
 
 ## Product Show
+
+Beyond the immersive product browsing experience on Azon, each product presents a link to its dedicated page. This page serves as a comprehensive resource, offering all the essential information you might need about the product of interest. From specifications to details, everything is conveniently available, allowing you to make informed decisions and seamlessly add items to your cart.
+
+<!-- [Product Show](Placeholder) -->
+
+```
+return (
+    <>
+      <div className="fillerdiv"></div>
+      <div className="productCardItem">
+        <div className="leftColumn">
+          <div className="productImageContainer">
+            {<img
+            className="productImageShow"
+            src={product.photoUrl[0]}
+            alt="Product Image"
+          />}
+          </div>
+        </div>
+
+        <div className="productDetailsContainer">
+          <h1 className="productNameShow">{product.name}</h1>
+          <div className="ratingContainer">
+            <h3 className="productRatingShow">Rating</h3>
+          </div>
+
+          <div className="lineSeparator"></div>
+
+          <h3 className="productPriceShow">${product.price}</h3>
+
+          <div className="productTypeContainer">
+            <div className="typeContainer">
+              <p className="type">Category:</p>
+            </div>
+            <div className="productCategory">
+              <p>{product.category}</p>
+            </div>
+          </div>
+          <div className="productTypeContainer">
+            <div className="typeContainer">
+              <p className="type">Brand:</p>
+            </div>
+            <div className="productBrand">
+              <p>{product.brand}</p>
+            </div>
+          </div>
+          <div className="productTypeContainer">
+            <div className="typeContainer">
+              <p className="type">Dimensions:</p>
+            </div>
+            <div className="productDimensions">
+              <p>{product.dimensions}</p>
+            </div>
+          </div>
+          <div className="productTypeContainer">
+            <div className="typeContainer">
+              <p className="type">Weight:</p>
+            </div>
+            <div className="productWeight">
+              <p>{product.weight}</p>
+            </div>
+          </div>
+
+          <div className="lineSeparator"></div>
+
+          <label className="about">About this item</label>
+          <ul className="productDescriptionContainer">
+            {product.description.split(".").map((line, index) => {
+              return (
+                <li className="productDescription" key={index}>
+                  {line}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+        <div className="cartContainer">
+          <h3 className="productPriceShow">${product.price}</h3>
+          <span className="freeR">Free Returns</span>
+          <span className="delivery">
+            <DeliveryComponent />
+          </span>
+          <h4 className="Availabilty">In Stock</h4>
+
+          <form>
+            <div className="quantityContainer">
+              <span className="quantity">Quantity:</span>
+              <select
+                className="productQuantity"
+                name="productQuantity"
+                value={quantity}
+                onChange={handleQuantity}
+              >
+                {Array.from({ length: 10 }, (_, index) => (
+                  <option key={index + 1} value={index + 1}>
+                    {index + 1}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <button className="cartButton" onClick={handleCart}>
+              Add to Cart
+            </button>
+            <button className="buyButton" type="submit">
+              Buy Now
+            </button>
+          </form>
+
+          <div className="cartFooterContainer">
+            <div className="firstFooter">
+              <span className="start">Ships from</span>
+            </div>
+            <div className="SecondFooter">
+              <span className="end">Azon.com</span>
+            </div>
+          </div>
+
+          <div className="cartFooterContainer">
+            <div className="firstFooter">
+              <span className="start">Sold by</span>
+            </div>
+            <div className="SecondFooter">
+              <span className="end">Azon.com</span>
+            </div>
+          </div>
+
+          <div className="cartFooterContainer">
+            <div className="firstFooter1">
+              <span className="start">Returns</span>
+            </div>
+            <div className="SecondFooter">
+              <span className="returns">
+                Eligible for Return, Refund or Replacement within 30 days of
+                receipt
+              </span>
+            </div>
+          </div>
+
+          <div className="cartFooterContainer">
+            <div className="firstFooter">
+              <span className="start">Payment</span>
+            </div>
+            <div className="SecondFooter">
+              <span className="returns">Secure transaction</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="productFooter">
+        <Footer />
+      </div>
+    </>
+);
+```
+
+## Real Time Shipping
+
+Azon not only provides you with the convenience of making a purchase but also keeps you well-informed about the delivery details of your selected products.
+
+```
+const DeliveryComponent = () => {
+  const [deliveryRange, setDeliveryRange] = useState("");
+
+  useEffect(() => {
+    const currentDate = new Date();
+
+    const deliveryDate = new Date(currentDate);
+    deliveryDate.setDate(currentDate.getDate() + 5);
+
+    const endDeliveryDate = new Date(currentDate);
+    endDeliveryDate.setDate(currentDate.getDate() + 7);
+
+    const deliveryDateStr = deliveryDate.toLocaleDateString("en-US", {
+      month: "long",
+      day: "numeric",
+    });
+    const endDeliveryDateStr = endDeliveryDate.toLocaleDateString("en-US", {
+      month: "long",
+      day: "numeric",
+    });
+
+    setDeliveryRange(`${deliveryDateStr} - ${endDeliveryDateStr}`);
+  }, []);
+
+  return (
+    <div>
+      <div className="delivery">
+        <span className="freeD">Free Delivery</span>
+        {deliveryRange && <>{deliveryRange}</>}.
+      </div>
+    </div>
+  );
+};
+```
+
 ## Cart
 
+Unlocking the essence of convenience, Azon's cart feature is the enchanting force behind it all. Within your Azon cart, users can seamlessly add products, adjust quantities, and effortlessly remove items at their discretion. When the time comes, users can proceed to checkout, and even upon logging out, Azon ensures that items remaining in the cart are diligently saved for future contemplation.
+
+<!-- [Cart](Placeholder) -->
 
 
 

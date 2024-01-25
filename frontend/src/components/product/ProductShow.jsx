@@ -10,15 +10,14 @@ import "./ProductShow.css";
 import { createCart, updateCart, memoizedSelectCarts } from "../../store/cart";
 import { useNavigate } from "react-router-dom";
 
-
 const ProductShow = () => {
   const dispatch = useDispatch();
   const { productId } = useParams();
   const product_id = parseInt(productId);
   const navigate = useNavigate();
-  const user = useSelector(state => state.session.user);
+  const user = useSelector((state) => state.session.user);
   const carts = useSelector(memoizedSelectCarts);
-  const [quantity, setQuantity] = useState(1)
+  const [quantity, setQuantity] = useState(1);
 
   const product = useSelector(selectProduct(productId));
 
@@ -26,7 +25,7 @@ const ProductShow = () => {
   // const [selectedImage, setSelectedImage] = useState(product.photoUrl[0]);
 
   useEffect(() => {
-      dispatch(fetchProduct(productId));
+    dispatch(fetchProduct(productId));
   }, [dispatch, productId]);
 
   // useEffect((product) => {
@@ -43,35 +42,32 @@ const ProductShow = () => {
 
   const handleQuantity = (e) => {
     setQuantity(parseInt(e.target.value, 10));
-  }
+  };
 
-  const handleCart= async (e) => {
+  const handleCart = async (e) => {
     e.preventDefault();
     if (user) {
       const user_id = user.id;
       const productToAdd = { quantity, product_id, user_id };
 
       const existingCartItem = carts.find(
-        (item) => item.productId === product.id,
+        (item) => item.productId === product.id
       );
-      
+
       if (existingCartItem) {
         const updatedCartItem = {
           ...existingCartItem,
           quantity: existingCartItem.quantity + quantity,
         };
-        
+
         dispatch(updateCart(updatedCartItem));
       } else {
         dispatch(createCart(productToAdd));
       }
     } else {
-      navigate('/login');
+      navigate("/login");
     }
-  
-
   };
-
 
   if (!product) {
     return <div>Loading...</div>;
@@ -103,20 +99,18 @@ const ProductShow = () => {
               </label>
             ))} */}
           </div>
-        <div className="productImageContainer">
-          {/* <img
+          <div className="productImageContainer">
+            {/* <img
             className="productImageShow"
             // onMouseOver={handleImageChange}
             src={product.photoUrl[0]}
             alt="Product Image"
           /> */}
-        </div>
+          </div>
         </div>
 
         <div className="productDetailsContainer">
-          <h1 className="productNameShow">
-            {product.name}
-          </h1>
+          <h1 className="productNameShow">{product.name}</h1>
           <div className="ratingContainer">
             <h3 className="productRatingShow">Rating</h3>
           </div>
@@ -160,7 +154,7 @@ const ProductShow = () => {
 
           <div className="lineSeparator"></div>
 
-            <label className="about">About this item</label>
+          <label className="about">About this item</label>
           <ul className="productDescriptionContainer">
             {product.description.split(".").map((line, index) => {
               return (
@@ -182,7 +176,12 @@ const ProductShow = () => {
           <form>
             <div className="quantityContainer">
               <span className="quantity">Quantity:</span>
-              <select className="productQuantity" name="productQuantity" value={quantity} onChange={handleQuantity}>
+              <select
+                className="productQuantity"
+                name="productQuantity"
+                value={quantity}
+                onChange={handleQuantity}
+              >
                 {Array.from({ length: 10 }, (_, index) => (
                   <option key={index + 1} value={index + 1}>
                     {index + 1}
@@ -190,7 +189,7 @@ const ProductShow = () => {
                 ))}
               </select>
             </div>
-            <button className="cartButton"  onClick={handleCart}>
+            <button className="cartButton" onClick={handleCart}>
               Add to Cart
             </button>
             <button className="buyButton" type="submit">
