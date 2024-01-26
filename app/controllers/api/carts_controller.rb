@@ -4,7 +4,9 @@ class Api::CartsController < ApplicationController
   # before_action
 
   def index
-    @carts = current_user.carts
+    # debugger
+    @carts = []
+    @carts = current_user.carts if current_user != nil
     render :index
   end
 

@@ -4,6 +4,8 @@ class Api::ProductsController < ApplicationController
 
   def index
     @products = Product.all
+    # @products = Product.where(category: category) if category
+    # Rails.logger.debug params.inspect
     render :index
   end
 
