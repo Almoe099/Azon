@@ -100,12 +100,12 @@ const ProductShow = () => {
             ))} */}
           </div>
           <div className="productImageContainer">
-            {/* <img
+            <img
             className="productImageShow"
             // onMouseOver={handleImageChange}
             src={product.photoUrl[0]}
             alt="Product Image"
-          /> */}
+          />
           </div>
         </div>
 
