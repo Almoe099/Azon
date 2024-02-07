@@ -55,7 +55,7 @@ function Navigation() {
 
         <div className="nav">
           <div className="optionIcon">
-            <Link to={"https://github.com/Almoe099"}>
+            <Link to={"https://www.linkedin.com/in/almutasim-mohamed-17464b2b2/"}>
               <img className="icon" src={orangeLinkedin} />
             </Link>
           </div>
