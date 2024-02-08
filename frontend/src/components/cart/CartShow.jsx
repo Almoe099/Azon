@@ -44,7 +44,7 @@ const CartShow = ( {cart} ) => {
         <NavLink to={`/products/${product.id}`} className="product-link">
           {product.name}
         </NavLink>
-            <div className="cart-item-price">${product.price * quantity}</div>
+            <div className="cart-item-price">${(product.price * quantity).toFixed(2)}</div>
         <div className="bottomInfo">
         <div className="cart-item-quantity">
           <label>Quantity:</label>
