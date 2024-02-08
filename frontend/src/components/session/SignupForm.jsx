@@ -49,6 +49,7 @@ function SignupForm() {
     );
   };
 
+
   return (
     <>
       <Link to={"/"}>
@@ -113,7 +114,7 @@ function SignupForm() {
 
           <button type="submit">Continue</button>
 
-          <button type="submit" id="demo" onClick={demoLogin}>
+          <button type="button" id="demo" onClick={demoLogin}>
             Demo Login
           </button>
 
