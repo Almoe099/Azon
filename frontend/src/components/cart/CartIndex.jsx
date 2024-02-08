@@ -53,11 +53,14 @@ const CartIndex = () => {
               <div className="emptyCart">
                 <h1 className="cartEmptyH1">Your Azon Cart is empty</h1>
 
-                <NavLink to="/products">
                   <p className="cartEmptyP">
-                    Check your Saved for later items below or continue shopping.
+                    Check your Saved for later items below or
+                  <NavLink to="/products">
+                    <span className="shopLink">
+                      continue shopping.
+                    </span>
+                   </NavLink>
                   </p>
-                </NavLink>
               </div>
 
               {!user ? (
@@ -87,34 +90,39 @@ const CartIndex = () => {
           )}
         </div>
 
-        {quantity && (
-          <div className="checkoutContainerBox">
-            <span className="freeShipping">
-              Your order qualifies for FREE Shipping.
-            </span>
+        {quantity ? (
+  quantity > 0 && (
+    <div className="checkoutContainerBox">
+      <span className="freeShipping">
+        Your order qualifies for FREE Shipping.
+      </span>
 
-            <p className="totalPrice">
-              Subtotal ({quantity} {more ? "Items" : "Item"}): ${total}.00
-            </p>
+      <p className="totalPrice">
+        Subtotal ({quantity} {more ? "Items" : "Item"}): ${total}.00
+      </p>
 
-            <label className="giftContainer" htmlFor="radio">
-              <input
-                className="giftRadio"
-                type="checkbox"
-                value="This order contains a gift"
-              />
-              <span className="giftSpan">This order contains a gift</span>
-            </label>
+      <label className="giftContainer" htmlFor="radio">
+        <input
+          className="giftRadio"
+          type="checkbox"
+          value="This order contains a gift"
+        />
+        <span className="giftSpan">This order contains a gift</span>
+      </label>
 
-            {quantity && (
-              <NavLink to="/checkout">
-                <button type="submit" className="checkoutButton">
-                  Checkout
-                </button>
-              </NavLink>
-            )}
-          </div>
-        )}
+      {quantity && (
+        <NavLink to="/checkout">
+          <button type="submit" className="checkoutButton">
+            Checkout
+          </button>
+        </NavLink>
+      )}
+    </div>
+  )
+) : (
+  <p></p>
+)}
+
       </div>
       <div className="cartFooter">
         <Footer />

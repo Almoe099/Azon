@@ -35,16 +35,20 @@ const CartShow = ( {cart} ) => {
 
     return (
         <div className="cart-item-container">
-      <div className="cart-item-image">
-        <img src={product.photoUrl[0]} alt={product.name} />
-      </div>
+          <div className='cart-image-container'>
+            <div className="cart-item-image">
+              <img src={product.photoUrl[0]} alt={product.name} />
+            </div>
+          </div>
       <div className="cart-item-details">
         <NavLink to={`/products/${product.id}`} className="product-link">
           {product.name}
         </NavLink>
+            <div className="cart-item-price">${product.price * quantity}</div>
+        <div className="bottomInfo">
         <div className="cart-item-quantity">
           <label>Quantity:</label>
-          <select value={quantity} onChange={handleQuantity}>
+          <select value={quantity} onChange={handleQuantity} className='quantitybox'>
             {Array.from({ length: 10 }, (_, index) => (
               <option key={index + 1} value={index + 1}>
                 {index + 1}
@@ -52,10 +56,10 @@ const CartShow = ( {cart} ) => {
             ))}
           </select>
         </div>
-        <div className="cart-item-price">${product.price * quantity}</div>
-        <button className="delete-button" onClick={deleteItem}>
+        <div className="delete-button" onClick={deleteItem}>
           Delete
-        </button>
+        </div>
+        </div>
       </div>
     </div>
     )
