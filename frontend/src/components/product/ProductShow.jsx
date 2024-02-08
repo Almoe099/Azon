@@ -4,8 +4,8 @@ import { fetchProduct, selectProduct } from "../../store/product";
 import { useEffect, useState } from "react";
 import DeliveryComponent from "./date";
 import Footer from "../Navigation/Footer";
-// import loading from "../../pictures/loading.jpg";
-// import loadingCopy from "../../pictures/loadingCopy.jpg";
+import loading from "../../pictures/loading.jpg";
+import loadingCopy from "../../pictures/loadingCopy.jpg";
 import "./ProductShow.css";
 import { createCart, updateCart, memoizedSelectCarts } from "../../store/cart";
 import { useNavigate } from "react-router-dom";
@@ -21,24 +21,23 @@ const ProductShow = () => {
 
   const product = useSelector(selectProduct(productId));
 
-  // const [thumbnails, setThumbnails] = useState([loading, loadingCopy]);
-  // const [selectedImage, setSelectedImage] = useState(product.photoUrl[0]);
+  const [thumbnails, setThumbnails] = useState([loading, loadingCopy]);
+  const [selectedImage, setSelectedImage] = useState(thumbnails[0]);
 
   useEffect(() => {
     dispatch(fetchProduct(productId));
   }, [dispatch, productId]);
 
-  // useEffect((product) => {
-  //   if(product && product.photoUrl){
-  //     setThumbnails(product.photosUrl);
-  //     setSelectedImage(thumbnails[0]);
-  //   }
-  // }, [thumbnails, product]);
+  useEffect(() => {
+    if (product && product.photoUrl) {
+      setThumbnails(product.photoUrl);
+      setSelectedImage(product.photoUrl[0]);
+    }
+  }, [product]);
 
-  // const handleImageChange = (e) => {
-  //   setSelectedImage(e.target.scr);
-  //   // console.log(e.target);
-  // };
+  const handleImageChange = (photo) => {
+    setSelectedImage(photo);
+  };
 
   const handleQuantity = (e) => {
     setQuantity(parseInt(e.target.value, 10));
@@ -79,32 +78,31 @@ const ProductShow = () => {
       <div className="productCardItem">
         <div className="leftColumn">
           <div className="imageCarousel">
-            {/* {product.photoUrl && product.photoUrl.map((photo, index) => (
+          {thumbnails.map((photo, index) => (
               <label key={index} className="photo-label">
                 <input
                   type="radio"
                   name="photo"
                   value={photo}
-                  onChange={handleImageChange}
-                  checked={selectedImage === photo}
+                  // onChange={}
+                  // checked={selectedImage === photo}
                   className="photo-radio"
                 />
                 <img
-                  src={photo}
-                  alt={`photo ${index + 1}`}
-                  className={`photo ${
-                    selectedImage === photo ? "selected" : ""
-                  }`}
+                src={photo}
+                alt={`photo ${index + 1}`}
+                className={`photo ${selectedImage === photo ? "selected" : ""}`}
+                onClick={() => handleImageChange(photo)}
                 />
               </label>
-            ))} */}
+            ))}
           </div>
           <div className="productImageContainer">
             <img
             className="productImageShow"
-            // onMouseOver={handleImageChange}
-            src={product.photoUrl[0]}
+            src={selectedImage}
             alt="Product Image"
+
           />
           </div>
         </div>
