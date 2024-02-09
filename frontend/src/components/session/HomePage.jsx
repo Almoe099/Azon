@@ -1,12 +1,16 @@
 import "./HomePage.css";
 import ProductsIndex from "../product/ProductIndex";
 import Footer from "../Navigation/Footer";
+import Banner from "../Navigation/Banner";
 
 function HomePage() {
 
+
   return (
     <div className="HomePage">
-      <img className='background' src="https://m.media-amazon.com/images/I/71pQ0d+gByL._SR1500,300_.jpg" alt="" />
+
+      <Banner />
+      
       <ProductsIndex />
       <footer className="homeFooter">
         <Footer />
@@ -16,3 +20,5 @@ function HomePage() {
 }
 
 export default HomePage;
+
+

@@ -28,7 +28,8 @@
 
 .productImageShow {
     max-height: 100%;
-    max-width: 100%;
+    max-width: 70%;
+    
     padding: 80px;
     object-fit:contain;
 }
@@ -290,6 +291,7 @@
     max-height: 500px;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    /* border: solid 3px red; */
 
     /* &::-webkit-scrollbar {
         display: none;
@@ -309,7 +311,8 @@
 }
 
 .photo {
-    max-width: 70px;
+    width: 70px;
+    height: 70px;
     padding: 10px;
     margin-top: 10px;
     object-fit: scale-down;
@@ -321,3 +324,4 @@
         cursor: pointer;
     }    
 }
+
