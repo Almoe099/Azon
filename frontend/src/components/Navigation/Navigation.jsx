@@ -89,11 +89,12 @@ function Navigation() {
               </div>
             </div>
           </div>
-
-          <div className="option">
+          
+          {/* future implemtation */}
+          {/* <div className="option">
             <span className="optionLineOne">Returns</span>
             <span className="optionLineTwo">& Orders</span>
-          </div>
+          </div> */}
 
           <div className="optionIcon">
             <Link to={"/cart"}>

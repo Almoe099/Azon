@@ -18,7 +18,6 @@ const Banner = () => {
     <div className="banner">
       <Slider {...settings}>
         <div>
-          {/* Use the imported images here */}
           <img src='https://www.chrislovesjulia.com/wp-content/uploads/2018/07/Screen-Shot-2018-07-15-at-11.13.14-PM.png' alt=""  id='bannerImg'/>
         </div>
         <div>

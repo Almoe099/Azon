@@ -10,6 +10,7 @@ import "./ProductShow.css";
 import { createCart, updateCart, memoizedSelectCarts } from "../../store/cart";
 import { useNavigate } from "react-router-dom";
 
+
 const ProductShow = () => {
   const dispatch = useDispatch();
   const { productId } = useParams();
@@ -60,8 +61,10 @@ const ProductShow = () => {
         };
 
         dispatch(updateCart(updatedCartItem));
+        navigate("/cart");
       } else {
         dispatch(createCart(productToAdd));
+        navigate("/cart");
       }
     } else {
       navigate("/login");

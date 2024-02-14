@@ -19,11 +19,11 @@ const ProductsIndex = () => {
   // }
 
   if (params.get("category")) {
-    const categoryParam = params.get("category").replace(/[\W_]/g, ''); // Remove non-alphanumeric characters
-    const categoryRegex = new RegExp(categoryParam, 'i'); // Case-insensitive matching
+    const categoryParam = params.get("category").replace(/[\W_]/g, ''); 
+    const categoryRegex = new RegExp(categoryParam, 'i'); 
   
     products = products.filter(product => {
-      const productCategoryWithoutSpaces = product.category.replace(/[\W_]/g, ''); // Remove non-alphanumeric characters
+      const productCategoryWithoutSpaces = product.category.replace(/[\W_]/g, ''); 
       return productCategoryWithoutSpaces.match(categoryRegex);
     });
   }
