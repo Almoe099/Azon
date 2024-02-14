@@ -1,7 +1,7 @@
 /* ProductIndexPage.css */
 
 .productsIndexPage {
-  position: relative;
+  /* position: relative; */
   z-index: 1;
   padding: 20px;
   margin-top: 90px;
@@ -20,7 +20,7 @@
   margin: 1px;
   /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
   overflow: hidden;
-  position: relative; /* Add position relative */
+  /* position: relative; */
   box-sizing: border-box;
   margin-bottom: 20px;
   background-color: white;

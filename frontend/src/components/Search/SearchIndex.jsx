@@ -1,4 +1,4 @@
-import { useDispatch, useSelector, shallowEqual } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
 import { fetchSearch } from "../../store/search";

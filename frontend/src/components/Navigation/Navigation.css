@@ -10,7 +10,7 @@
   align-items: center;
   background-color: #131921;
   top: 0;
-  z-index: 2;
+  z-index: 5;
   padding: 0;
 }
 
@@ -68,7 +68,7 @@
 .cartCount {
   margin-left: 10px;
   margin-right: 10px;
-  
+
 }
 
 .nav {
@@ -116,55 +116,57 @@
 }
 
 .account-dropDown {
-position: relative;
-display: inline-block;
+  position: relative;
+  display: inline-block;
+  z-index: 100;
 }
 
 /* Styles for the dropdown content */
 .dropdown-content {
-display: none;
-position: absolute;
-top: 100%;
-left: -100px;
-background-color: #fff;
-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-border-radius: 5px;
-padding: 10px;
-z-index: 100;
-width: 300px;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: -100px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 10px;
+  z-index: 100;
+  width: 300px;
 }
 
 /* Show the dropdown content on hover */
 .account-dropDown:hover .dropdown-content {
-display: block;
+  display: block;
 }
 
 /* Additional styling for the links in the dropdown */
 .dropdown-content a {
-display: block;
-color: #333;
-text-decoration: none;
-padding: 8px 0;
+  display: block;
+  color: #333;
+  text-decoration: none;
+  padding: 8px 0;
 }
 
 /* Modify the label to make "Start here" look like a link */
 .new-customer-label {
-margin-top: 10px;
-display: flex;
-align-items: center;
-font-size: 12px;
-justify-content: center;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  justify-content: center;
 }
 
 .new-customer-label a {
-color: #0055aa;
-text-decoration: none;
-margin-left: 5px; /* Adjust the margin as needed */
+  color: #0055aa;
+  text-decoration: none;
+  margin-left: 5px;
+  /* Adjust the margin as needed */
 }
 
 .new-customer-label a:hover {
-text-decoration: underline;
-color: #e47911;
+  text-decoration: underline;
+  color: #e47911;
 }
 
 .categories {
