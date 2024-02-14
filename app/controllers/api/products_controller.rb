@@ -19,6 +19,12 @@ class Api::ProductsController < ApplicationController
     end
   end
 
+  def search
+    # ActiveStorage::Current.url_options = { host: request.base_url }
+    @products = Product.search_names(params[:q])
+    render :search
+  end
+
   private
 
   def product_params

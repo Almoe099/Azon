@@ -12,8 +12,9 @@ class Product < ApplicationRecord
 
   # has_many :reviews
 
+  def self.search_names(query)
+    where("lower(name) LIKE ?", "%#{sanitize_sql_like(query)}%")
+  end
+
 end
 
-# Furniture
-# Appliances
-# Art & Craft

@@ -8,9 +8,15 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     # ...
     resources :users, only: [:create]
-    resources :products, only: [:show, :index]
     resource :session, only: [:create, :show, :destroy]
     resources :carts, only: [:index, :show, :create, :update, :destroy]
+
+    resources :products, only: [:index, :show] do
+      collection do
+        get 'search', to: 'products#search'
+      end
+
+    end
 
   end
 
