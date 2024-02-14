@@ -11,6 +11,7 @@ import ProductShow from "./components/product/ProductShow";
 import { useLocation } from "react-router-dom";
 import CartIndex from "./components/cart/CartIndex";
 import Checkout from "./components/checkout/CheckOut";
+import CheckOutItem from "./components/checkout/CheckOutItem";
 
 function Layout(){
 
@@ -76,6 +77,10 @@ const router = createBrowserRouter([
       {
         path: 'checkout',
         element: <Checkout />
+      },
+      {
+        path: 'checkoutitem',
+        element: <CheckOutItem />
       }
 
     ]

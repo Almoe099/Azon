@@ -71,6 +71,10 @@ const ProductShow = () => {
     }
   };
 
+  const handleBuyNow = () => {
+    navigate("/checkoutitem")
+  }
+
   if (!product) {
     return <div>Loading...</div>;
   }
@@ -193,7 +197,7 @@ const ProductShow = () => {
             <button className="cartButton" onClick={handleCart}>
               Add to Cart
             </button>
-            <button className="buyButton" type="submit">
+            <button className="buyButton" onClick={handleBuyNow}>
               Buy Now
             </button>
           </form>

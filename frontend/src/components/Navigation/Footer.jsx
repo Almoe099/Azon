@@ -52,7 +52,7 @@ const Footer = () => {
       </div>
 
       <div className="footer-section">
-      <Link to={'https://github.com/Almoe099'}>
+      <Link to={'https://www.linkedin.com/in/almutasim-mohamed-17464b2b2/'}>
             <img className="linkedinIcon" src={linkedin} alt="" />
         </Link>
       </div>

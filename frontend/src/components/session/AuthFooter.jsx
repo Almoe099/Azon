@@ -9,6 +9,8 @@ const AuthFooter = () => {
       <div className="icons">
         <Link to={'https://github.com/Almoe099'}>
          <img className="githubIcon" src={github} alt="" />
+        </Link>
+        <Link to={'https://www.linkedin.com/in/almutasim-mohamed-17464b2b2/'}>
          <img className="linkedinIcon" src={linkedin} alt="" />
         </Link>
       </div>
