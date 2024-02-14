@@ -1,4 +1,4 @@
-import csrfFetch from "./csrf";
+import { csrfFetch } from "./csrf";
 
 export const RECEIVE_SEARCH = 'search/RECEIVE_SEARCH';
 

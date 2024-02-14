@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import azonImage from "../../pictures/azon.png";
-import SearchIcon from "../../pictures/search.png";
 import CartIcon from "../../pictures/cart.png";
 import orangeGithub from "../../pictures/orangeGithub.png";
 import orangeLinkedin from "../../pictures/orangeLinkedin.png";
@@ -11,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 import "./Navigation.css";
 import { memoizedSelectCarts } from "../../store/cart";
 import { NavLink } from "react-router-dom";
+import SearchBar from "../Search/SearchBar";
 
 function Navigation() {
   const user = useSelector((state) => state.session.user);
@@ -43,15 +43,7 @@ function Navigation() {
           <img className="logo" src={azonImage} />
         </Link>
 
-        <div className="searchBar">
-          <input
-            type="text"
-            className="inputSearch"
-            placeholder="Search Azon"
-          />
-
-          <img className="searchIcon" src={SearchIcon} id="search" />
-        </div>
+        <SearchBar />
 
         <div className="nav">
           <div className="optionIcon">
