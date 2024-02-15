@@ -10,33 +10,3 @@
 .homeFooter {
     margin-top: 300px;
 }
-
-.banner {
-    display: flex;
-    justify-content: center;
-    transition: transform 0.5s ease;
-    width: 500px; /* Width to accommodate one image */
-}
-
-.banner img {
-    width: 100%; /* Set the width to 100% to fill the banner */
-    height: auto;
-    /* margin-right: 1000px; */
-}
-
-.arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    font-size: 24px;
-    z-index: 1;
-}
-
-.arrow.left {
-    left: 10px;
-}
-
-.arrow.right {
-    right: 10px;
-}

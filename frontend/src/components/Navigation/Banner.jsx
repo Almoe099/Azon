@@ -1,63 +1,71 @@
-import Slider from 'react-slick';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import './Banner.css'
+import { useState, useEffect } from 'react';
+import './Banner.css'; 
 
 const Banner = () => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true, // Add autoplay property
-    autoplaySpeed: 5000,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const images = [
+    "https://www.chrislovesjulia.com/wp-content/uploads/2018/07/Screen-Shot-2018-07-15-at-11.13.14-PM.png",
+    "https://www.junglescout.com/wp-content/uploads/2020/05/Prime-day-banner.png",
+    "https://www.intelligencenode.com/blog/wp-content/uploads/2019/06/Prime-day.jpg"
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 9000);
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
+  const goToPrevSlide = () => {
+    const newIndex = currentImageIndex === 0 ? images.length - 1 : currentImageIndex - 1;
+    setCurrentImageIndex(newIndex);
+  };
+
+  const goToNextSlide = () => {
+    const newIndex = currentImageIndex === images.length - 1 ? 0 : currentImageIndex + 1;
+    setCurrentImageIndex(newIndex);
   };
 
   return (
-    <div className="banner">
-      <Slider {...settings}>
-        <div>
-          <img src='https://www.chrislovesjulia.com/wp-content/uploads/2018/07/Screen-Shot-2018-07-15-at-11.13.14-PM.png' alt=""  id='bannerImg'/>
+    <div className="banner-container">
+      <img src={images[currentImageIndex]} alt="Amazon Logo" className="bannerimg" />
+      <div className="banner-carousel">
+        {/* Image carousel content goes here */}
+        {images.map((image, index) => (
+          <img
+            key={index}
+            src={image}
+            alt={`Product ${index + 1}`}
+            className={`carousel-banner ${
+              index === currentImageIndex ? 'active' : ''
+            }`}
+          />
+        ))}
+        <div className="dots-container">
+          {/* Generating dot elements */}
+          {images.map((_, index) => (
+            <div
+              key={index}
+              className={`dot ${index === currentImageIndex ? 'active' : ''}`}
+              onClick={() => setCurrentImageIndex(index)}
+            />
+          ))}
         </div>
-        <div>
-          <img src='https://www.junglescout.com/wp-content/uploads/2020/05/Prime-day-banner.png' alt="" id='bannerImg'/>
+        <div id="prev-button" onClick={goToPrevSlide}>
+          &#10094;
         </div>
-        <div>
-          <img src='https://www.intelligencenode.com/blog/wp-content/uploads/2019/06/Prime-day.jpg' alt="" id='bannerImg'/>
+        <div id="next-button" onClick={goToNextSlide}>
+          &#10095;
         </div>
-      </Slider>
+      </div>
     </div>
   );
 };
 
-function SampleNextArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={`${className} custom-slick-arrow next-arrow`}
-        style={{ ...style }}
-        onClick={onClick}
-      >
-        <i className="arrow-icon">›</i>
-      </div>
-    );
-  }
-  
-  function SamplePrevArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={`${className} custom-slick-arrow prev-arrow`}
-        style={{ ...style }}
-        onClick={onClick}
-      >
-        <i className="arrow-icon">‹</i>
-      </div>
-    );
-  }
-  
-
 export default Banner;
+
+
+
