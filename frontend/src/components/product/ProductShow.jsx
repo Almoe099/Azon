@@ -117,7 +117,7 @@ const ProductShow = () => {
         <div className="productDetailsContainer">
           <h1 className="productNameShow">{product.name}</h1>
           <div className="ratingContainer">
-            <h3 className="productRatingShow">Rating</h3>
+            <h3 className="productRatingShow">★★★★★</h3>
           </div>
 
           <div className="lineSeparator"></div>

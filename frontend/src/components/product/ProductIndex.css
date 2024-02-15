@@ -33,6 +33,10 @@
   /* border: solid 3px red; */
 }
 
+.productLink {
+  text-decoration: none;
+}
+
 .productImage {
   object-fit: cover;
   width: 100%;
@@ -60,6 +64,7 @@
   text-align: left;
   letter-spacing: normal;
   color: Gold;
+  text-decoration: none;
   /* margin-top: 8px; */
 }
 

@@ -37,12 +37,12 @@ const ProductsIndex = () => {
       <div className="products-container">
         {products.map((product) => (
           <div key={product.id} className="product-card">
-              <Link to={`/products/${product.id}`}>
+              <Link to={`/products/${product.id}`} className="productLink">
             <div className="card">
                 <img className="productImage" src={product.photoUrl[0]} alt="Product Image" />
             <div className="card-content">
                 <p className="productName">{product.name}</p>
-              <p className="productReview">5 Stars</p>
+              <p className="productReview">★★★★★</p>
               <p className="productPrice">${product.price}</p>
             </div>
             </div>
