@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     # ...
     resources :users, only: [:create]
     resource :session, only: [:create, :show, :destroy]
+    resource :reviews, only: [:index, :show, :create, :update, :destroy]
     resources :carts, only: [:index, :show, :create, :update, :destroy]
 
     resources :products, only: [:index, :show] do
