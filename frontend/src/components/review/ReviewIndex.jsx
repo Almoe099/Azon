@@ -3,6 +3,7 @@ import { Fetchreviews } from "../../store/review"
 import { useEffect } from "react"
 import ReviewShow from "./ReviewShow"
 import { useParams } from "react-router-dom"
+import "/ReviewIndex.css"
 
 
 const ReviewIndex = ({product}) => {
