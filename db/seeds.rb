@@ -492,6 +492,29 @@ require "open-uri"
   bottle.photos.attach(io: URI.open("https://azon1-seeds.s3.amazonaws.com/bottle3.jpg"), filename: "bottle.jpg3")
 
 
+  def generate_realistic_review
+    product_quality = ["excellent", "good", "satisfactory", "poor", "mediocre", "outstanding", "subpar", "superb"].sample
+    product_durability = ["durable", "fragile", "long-lasting", "sturdy", "flimsy", "robust"].sample
+    customer_service = ["excellent", "satisfactory", "poor", "responsive", "unhelpful", "knowledgeable", "friendly"].sample
+    packaging_quality = ["secure", "sloppy", "professional", "haphazard", "meticulous", "careless"].sample
+    random_thoughts = ["I will definitely buy again!", "Highly recommended!", "A hidden gem!", "A must-have product!", "Great value for money!", "An unforgettable experience!", "A game-changer!"].sample
+    popular = ["popular", "niche", "mainstream", "trendy", "classic", "unique"].sample
+
+    "The product was #{product_quality}. Its durability was #{product_durability}, and the packaging was #{packaging_quality}. The customer service was #{customer_service}. #{random_thoughts}"
+  end
+
+  (1..11).each do |user_id|
+    (1..20).each do |product_id|
+      Review.create!(
+      user_id: user_id,
+      product_id: product_id,
+      review: generate_realistic_review,
+      rating: rand(1..5)
+    )
+    end
+  end
+
+
   # glasses = Product.create!(
   #   name: "",
   #   price: 15.98,

@@ -4,7 +4,6 @@ import { useSelector } from "react-redux"
 import Rating from "./Rating"
 
 
-
 const ReviewShow = ({review, product}) => {
 
     const [visible,setVisible] = useState(false)
