@@ -10,11 +10,12 @@ class Product < ApplicationRecord
   class_name: :Cart,
   dependent: :destroy
 
-  # has_many :reviews
+  has_many :reviews,
+  dependent: :destroy
+
 
   def self.search_names(query)
     where("lower(name) LIKE ?", "%#{sanitize_sql_like(query)}%")
   end
 
 end
-

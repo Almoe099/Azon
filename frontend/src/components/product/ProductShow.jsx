@@ -9,6 +9,7 @@ import loadingCopy from "../../pictures/loadingCopy.jpg";
 import "./ProductShow.css";
 import { createCart, updateCart, memoizedSelectCarts } from "../../store/cart";
 import { useNavigate } from "react-router-dom";
+import ReviewIndex from "../review/ReviewIndex";
 
 
 const ProductShow = () => {
@@ -242,6 +243,7 @@ const ProductShow = () => {
           </div>
         </div>
       </div>
+      <ReviewIndex product={product} />
       <div className="productFooter">
         <Footer />
       </div>

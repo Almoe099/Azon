@@ -2,6 +2,7 @@ import "./ReviewShow.css"
 import { useState } from "react"
 import { useSelector } from "react-redux"
 import Rating from "./Rating"
+import ReviewForm from "./ReviewForm"
 
 
 const ReviewShow = ({review, product}) => {
@@ -28,13 +29,13 @@ const ReviewShow = ({review, product}) => {
            
             <hr />
             <span id="reviewIndexItemName"> 
-            <img src={reviewProfile} alt="reviewProfile" id="reviewProfileImag"/>
+            {/* <img src={reviewProfile} alt="reviewProfile" id="reviewProfileImag"/> */}
             <div>
             {capitalizeFirstLetter(review?.fname)} {capitalizeFirstLetter(review?.lname)} 
             {/* <p id="reviewDateCreated">{formatDate(review?.created_at)}</p> */}
             </div>
             {visible && <div className="reviewSettingsDropDownWrapper">
-                {/* <ReviewDropDown review={review} visible={visible} setVisible={setVisible} product={product}/> */}
+                <ReviewForm review={review} visible={visible} setVisible={setVisible} product={product}/>
             </div>}
             <div className="threedots">
             {canEdit && <p id="currentUserDots" onClick={handleSettingDropDown}>&hellip;
@@ -46,11 +47,6 @@ const ReviewShow = ({review, product}) => {
         </div>
     )
 
-
 }
 
 export default ReviewShow
-
-
-// import ReviewDropDown from "./reviewDropDown"
-

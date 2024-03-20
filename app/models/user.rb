@@ -9,6 +9,9 @@ class User < ApplicationRecord
   class_name: :Cart,
   dependent: :destroy
 
+  has_many :reviews,
+  dependent: :destroy
+
   before_validation :ensure_session_token
 
   has_secure_password
