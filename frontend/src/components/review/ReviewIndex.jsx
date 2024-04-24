@@ -1,30 +1,29 @@
+import { fetchReviews, selectReviewArray } from "../../store/review";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useMemo } from "react";
 import ReviewShow from "./ReviewShow";
-import { useParams } from "react-router-dom";
-import { Fetchreviews } from "../../store/review";
+import { useEffect } from "react";
 import "./ReviewIndex.css";
 
 const ReviewIndex = ({ product }) => {
-    const reviews = useSelector((state) => Object.values(state?.review?.reviews || {}));
-    const dispatch = useDispatch();
-  const { productId } = useParams();
+  const reviews = useSelector(selectReviewArray);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(Fetchreviews());
+    dispatch(fetchReviews());
   }, [dispatch]);
 
-  const filteredReviews = useMemo(() => {
-    return reviews
-      .filter((el) => el.product_id === productId)
-      .reverse();
-  }, [reviews, productId]);
 
   return (
-    <div>
-      {filteredReviews.map((review) => (
-        <ReviewShow key={review?.id} review={review} product={product} />
-      ))}
+    <div className="reviewIndexPageMain">
+      {reviews.map((review, index) => {
+        if (review.productId == product.id) {
+          return (
+            <div className="reviewIndexDiv" key={`${review.id}_${index}`}>
+              <ReviewShow review={review}/>
+            </div>
+          );
+        }
+      })}
     </div>
   );
 };
