@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { createReview, updateReview } from '../../store/review';
+import { CreateReviewRating } from './Rating';
 
-import { CreateReviewRating } from '../product/Rating';
 import Modal from '../modal/Modal';
 import * as modalActions from '../../store/modal';
 import './ReviewForm.css';

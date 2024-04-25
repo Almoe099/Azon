@@ -12,9 +12,6 @@ export const Rating = ({ rating }) => {
   return <div className="star-rating">{renderStars()}</div>;
 };
 
-
-
-
 export const ReviewRating = ({ ReviewRating }) => {
   const renderStars = () => {
     const stars = [];
