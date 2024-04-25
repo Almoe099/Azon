@@ -2,8 +2,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { createReview, updateReview } from '../../store/review';
 import { CreateReviewRating } from './Rating';
-
-import Modal from '../modal/Modal';
+import Modal from '../modal/modal';
 import * as modalActions from '../../store/modal';
 import './ReviewForm.css';
 
@@ -15,11 +14,11 @@ const ReviewForm = ({ productId }) => {
   
   const reviewData = modalState.modalData.review || {};
   const [title, setTitle] = useState(isEditing ? reviewData.title : "");
-  const [body, setBody] = useState(isEditing ? reviewData.body : "");
+  const [review, setReview] = useState(isEditing ? reviewData.review : "");
   const [rating, setRating] = useState(isEditing ? reviewData.rating : 0);
 
   const userId = sessionUser.id;
-  const username = sessionUser.username;
+  const name = sessionUser.name;
 
 
   const handleSubmit = (e) => {
@@ -29,20 +28,20 @@ const ReviewForm = ({ productId }) => {
       dispatch(updateReview({
         id: isEditing ? reviewData.id : undefined,
         title,
-        body,
+        review,
         rating,
         userId,
         productId,
-        username,
+        name,
       }));
     } else {
       dispatch(createReview({
         title,
-        body,
+        review,
         rating,
         userId,
         productId,
-        username,
+        name,
       }));
     }
 
@@ -72,9 +71,9 @@ const ReviewForm = ({ productId }) => {
           <textarea 
             placeholder='Write your review'
             id='reviewTextarea'
-            value={body}
+            value={review}
             onChange={(e) => {
-              setBody(e.target.value);
+              setReview(e.target.value);
             }}
           />
 

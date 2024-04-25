@@ -35,14 +35,14 @@ const ReviewShow = ({ review }) => {
       <div id="customerReviewShowDivMain">
         <div id="customerReviewShowDiv">
           <img id='reviewProfilePreset' src={profile} alt="" />
-          <span id="userReviewUsername">{review.username}</span>
+          <span id="userReviewName">{review.name}</span>
           <div className="reviewTitleDiv">
             <Rating Rating={review.rating} />
             <span className="reviewTitleSpan">{review.title}</span>
             {modalType && <ReviewForm productId={review.productId} />}
           </div>
 
-          <div className="reviewBodyDiv">{review.body}</div>
+          <div className="reviewReviewDiv">{review.review}</div>
           <button className='editDeleteReviewBtn' onClick={editReview}>Edit</button>
           <button className='editDeleteReviewBtn' onClick={removeReview}>Delete</button>
         </div>
@@ -58,7 +58,7 @@ const ReviewShow = ({ review }) => {
             <Rating Rating={review.rating} />
             <span className="reviewTitleSpan">{review.title}</span>
           </div>
-          <div className="reviewBodyDiv">{review.body}</div>
+          <div className="reviewReviewDiv">{review.review}</div>
         </div>
       </div>
     );
