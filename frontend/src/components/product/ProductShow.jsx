@@ -9,13 +9,11 @@ import loadingCopy from "../../pictures/loadingCopy.jpg";
 import "./ProductShow.css";
 import { createCart, updateCart, memoizedSelectCarts } from "../../store/cart";
 import { useNavigate } from "react-router-dom";
-// import ReviewIndex from "../review/ReviewIndex";
 import { ReviewRating, Rating } from "../review/Rating";
 import ReviewIndex from "../review/ReviewIndex";
-import { fetchReviews } from "../../store/review";
 import * as modalActions from '../../store/modal';
 import ReviewForm from "../review/ReviewForm";
-import { selectReviewProductArray } from "../../store/review";
+import { selectReviewProductArray, fetchReviews } from "../../store/review";
 
 
 
@@ -34,12 +32,16 @@ const ProductShow = () => {
   const [selectedImage, setSelectedImage] = useState(thumbnails[0]);
 
   const modalType = useSelector((state) => state.modal.type === "SHOW_REVIEW_MODAL");
+  const [loaded, setLoaded] = useState(false);
+  
   let reviewSum = 0;
   let reviewAverage = 0;
 
   useEffect(() => {
     dispatch(fetchReviews());
-    dispatch(fetchProduct(productId));
+    dispatch(fetchProduct(productId))
+    .then(() => setLoaded(true))
+    .catch(() => setLoaded(true));
   }, [dispatch, productId]);
 
   let reviews = useSelector(state => selectReviewProductArray(state, product_id));
@@ -310,7 +312,7 @@ const ProductShow = () => {
         {user ? 
           <button id='reviewButtonOne' onClick={handleClick}>Write a customer review</button>
           :
-          <p></p>
+          <p>no</p>
         } 
       </div>
     </div>

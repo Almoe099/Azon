@@ -53,7 +53,7 @@ const ReviewShow = ({ review }) => {
       <div id="customerReviewShowDivMain">
         <div id="customerReviewShowDiv">
           <img id='reviewProfilePreset' src={profile} alt="" />
-          <span id="userReviewUsername">{review.username}</span>
+          <span id="userReviewUsername">{review.name}</span>
           <div className="reviewTitleDiv">
             <ReviewRating ReviewRating={review.rating} />
             <span className="reviewTitleSpan">{review.title}</span>

@@ -45,6 +45,7 @@ export const selectReviewProductArray = createSelector(
   }
 );
 
+
 export const fetchReviews = () => async dispatch => {
   const res = await csrfFetch('/api/reviews');
   if (res.ok) {
