@@ -5,6 +5,16 @@ class Api::ReviewsController < ApplicationController
     render :index
   end
 
+  # def show
+  #   @review = Review.find_by(id: params[:id])
+
+  #   if @review
+  #     render :show
+  #   else
+  #     render json: { review: nil }
+  #   end
+  # end
+
   def create
     @review = Review.new(review_params)
     @user = User.find_by(id: @review.user_id)

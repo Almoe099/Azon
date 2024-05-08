@@ -50,6 +50,7 @@ export const fetchReviews = () => async dispatch => {
   const res = await csrfFetch('/api/reviews');
   if (res.ok) {
     const data = await res.json();
+    console.log(data.reviews);
     dispatch(receiveReviews(data.reviews));
   }
 };
@@ -58,7 +59,7 @@ export const fetchReview = reviewId => async dispatch => {
   const res = await csrfFetch(`/api/review/${reviewId}`);
   if (res.ok) {
     const data = await res.json();
-
+    
     dispatch(receiveReviews(data));
   }
 };

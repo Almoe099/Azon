@@ -12,7 +12,7 @@ const rootReducer = combineReducers({
     products: productsReducer,
     cart: cartReducer,
     search: searchReducer,
-    review: reviewReducer,
+    reviews: reviewReducer,
     modal: modalsReducer
 });
 
