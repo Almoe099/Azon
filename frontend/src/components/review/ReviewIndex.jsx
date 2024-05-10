@@ -18,7 +18,7 @@ const ReviewIndex = ({ product }) => {
       {reviews.map((review, index) => {
         if (review.productId == product.id) {
           return (
-            <div className="reviewIndexDiv" key={`${review.id}_${index}`}>
+            <div className="reviewIndexDiv" key={`review_${review.id}_${index}`}>
               <ReviewShow review={review}/>
             </div>
           );

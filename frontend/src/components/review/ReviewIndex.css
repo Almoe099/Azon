@@ -1,0 +1,11 @@
+/* Styling for review index page */
+.reviewIndexPageMain {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Styling for review index div */
+  .reviewIndexDiv {
+    margin-bottom: 20px;
+  }
+  

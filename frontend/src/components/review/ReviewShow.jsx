@@ -12,7 +12,6 @@ const ReviewShow = ({ review }) => {
   const sessionUser = useSelector(state => state.session.user);
   const modalType = useSelector((state) => state.modal.type === "SHOW_EDIT_MODAL");
 
-
   useEffect(() => {
     dispatch(fetchReviews());
   }, [dispatch]);
@@ -22,7 +21,6 @@ const ReviewShow = ({ review }) => {
     dispatch(modalActions.showModal("SHOW_EDIT_MODAL", { review: review, productId: review.productId }));
   };
   
-
   const removeReview = (e) => {
     e.preventDefault();
     dispatch(deleteReview(review.id));
@@ -32,33 +30,32 @@ const ReviewShow = ({ review }) => {
 
   if (sessionUser && sessionUser.id === review.userId) {
     userReviews = (
-      <div id="customerReviewShowDivMain">
-        <div id="customerReviewShowDiv">
-          <img id='reviewProfilePreset' src={profile} alt="" />
-          <span id="userReviewName">{review.name}</span>
-          <div className="reviewTitleDiv">
+      <div id="userReviewContainer">
+        <div className="userReviewContent">
+          <img className='userReviewProfile' src={profile} alt="" />
+          <span className="userReviewName">{review.name}</span>
+          <div className="userReviewTitle">
             <ReviewRating ReviewRating={review.rating} />
-            <span className="reviewTitleSpan">{review.title}</span>
+            <span className="userReviewTitleText">{review.title}</span>
             {modalType && <ReviewForm productId={review.productId} />}
           </div>
-
-          <div className="reviewReviewDiv">{review.review}</div>
-          <button className='editDeleteReviewBtn' onClick={editReview}>Edit</button>
-          <button className='editDeleteReviewBtn' onClick={removeReview}>Delete</button>
+          <div className="userReviewDescription">{review.review}</div>
+          <button className='userReviewEditBtn' onClick={editReview}>Edit</button>
+          <button className='userReviewDeleteBtn' onClick={removeReview}>Delete</button>
         </div>
       </div>
     );
   } else {
     userReviews = (
-      <div id="customerReviewShowDivMain">
-        <div id="customerReviewShowDiv">
-          <img id='reviewProfilePreset' src={profile} alt="" />
-          <span id="userReviewUsername">{review.name}</span>
-          <div className="reviewTitleDiv">
+      <div id="userReviewContainer">
+        <div className="userReviewContent">
+          <img className='userReviewProfile' src={profile} alt="" />
+          <span className="userReviewUsername">{review.name}</span>
+          <div className="userReviewTitle">
             <ReviewRating ReviewRating={review.rating} />
-            <span className="reviewTitleSpan">{review.title}</span>
+            <span className="userReviewTitleText">{review.title}</span>
           </div>
-          <div className="reviewReviewDiv">{review.review}</div>
+          <div className="userReviewDescription">{review.review}</div>
         </div>
       </div>
     );

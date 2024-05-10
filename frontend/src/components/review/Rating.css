@@ -1,3 +1,4 @@
+/* Styling for star rating */
 .star-rating {
     position: relative;
     margin-left: 15px;
@@ -5,14 +6,16 @@
     font-size: 16px;
     font-family: manrope-m;
     font-style: normal;
-    color: #142800;
+    color: #f0c14b; /* Amazon's star color */
     line-height: 24px;
 }
 
+/* Styling for empty star */
 .star {
     color: #979797;
 }
 
+/* Styling for filled star */
 .filled {
-    color: rgb(119,243,123);
+    color: #f0c14b; /* Amazon's star color */
 }

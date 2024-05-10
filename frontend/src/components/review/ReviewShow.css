@@ -1,77 +1,64 @@
-#reviewIndexItemDescription{
-    position: relative;
-    margin-left: 15px;
-    font-weight: 400;
-    font-size: 16px;
-    font-family: manrope-m;
-    font-style: normal;
-    color: #142800;
-    line-height: 24px;
+/* Styling for user review container */
+#userReviewContainer {
+  margin-bottom: 20px;
 }
 
-#reviewIndexItemName{
-    font-weight: 400;
-    font-size: 16px;
-    font-family: manrope-m;
-    color: #142800;
-    line-height: 24px;
-    margin-top: 20px;
-    display: flex;
-  
+/* Styling for user review content */
+.userReviewContent {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
 }
 
-#reviewProfileImag{
-    height: 40px;
-    border-radius: 50px;
+/* Styling for user review profile picture */
+.userReviewProfile {
+  width: 50px;
+  height: 50px;
+
 }
 
-#reviewDateCreated{
-    font-weight: 400;
-    font-size: 13px;
-    font-family: manrope-m;
-    color: #656e5e;
-    line-height: 19.5px;
+/* Styling for user review name */
+.userReviewName {
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-.reviewSettingsDropDownWrapper{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 150px;
-    height: auto;
-    position: absolute;
-    margin-left: 41vw;
-    margin-top: 8px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 1;
-    border-radius: 15px;
-    cursor: pointer;
+/* Styling for user review title */
+.userReviewTitle {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
-
-
-#currentUserDots{
-    position: relative;
-    margin-left: 40vw;
-    z-index: 1;
-    width: 35px;
-    height: 35px;
-    bottom: 2vh;
-    font-size: 25px;
-    cursor: pointer;
-    border: 1px solid white;
-    border-radius: 50px;
+/* Styling for user review title text */
+.userReviewTitleText {
+  margin-left: 10px;
 }
 
-#currentUserDots:hover{
-    background-color:lightgray;
+/* Styling for user review description */
+.userReviewDescription {
+  margin-bottom: 10px;
 }
 
+/* Styling for user review edit and delete buttons */
+.userReviewEditBtn,
+.userReviewDeleteBtn {
+  background-color: #f0c14b;
+  border: 1px solid;
+  border-color: #a88734 #9c7e31 #846a29;
+  color: #111;
+  cursor: pointer;
+  padding: 7px 0;
+  text-align: center;
+  width: 80px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
 
-.threedots{
-    display: flex;
-    align-items: center;
-    text-align: center;
+/* Styling for user review edit and delete buttons on hover */
+.userReviewEditBtn:hover,
+.userReviewDeleteBtn:hover {
+  background-color: #f9ebaf;
 }
