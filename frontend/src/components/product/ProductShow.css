@@ -1,11 +1,8 @@
-/* .fillerDiv {
-    height: 50px;
-    width: 100%;
-    background-color: gray;
-    opacity: 10%;
-    margin-bottom: 80px;
+.fillerDiv {
+    display: flex;
+    flex-direction: row;
     border: solid 3px red;
-} */
+}
 
 .productCardItem {
     display: flex;
@@ -326,3 +323,10 @@
     }    
 }
 
+/* .reviewContainer {
+    border: solid 3px red;
+} */
+
+#customerReviewsH1 {
+    margin-top: 150px;
+}

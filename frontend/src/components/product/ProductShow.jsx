@@ -11,11 +11,9 @@ import { createCart, updateCart, memoizedSelectCarts } from "../../store/cart";
 import { useNavigate } from "react-router-dom";
 import { ReviewRating, Rating } from "../review/Rating";
 import ReviewIndex from "../review/ReviewIndex";
-import * as modalActions from '../../store/modal';
+import * as modalActions from "../../store/modal";
 import ReviewForm from "../review/ReviewForm";
 import { selectReviewProductArray, fetchReviews } from "../../store/review";
-
-
 
 const ProductShow = () => {
   const dispatch = useDispatch();
@@ -31,27 +29,29 @@ const ProductShow = () => {
   const [thumbnails, setThumbnails] = useState([loading, loadingCopy]);
   const [selectedImage, setSelectedImage] = useState(thumbnails[0]);
 
-  const modalType = useSelector((state) => state.modal.type === "SHOW_REVIEW_MODAL");
+  const modalType = useSelector(
+    (state) => state.modal.type === "SHOW_REVIEW_MODAL"
+  );
   const [loaded, setLoaded] = useState(false);
-  
+
   let reviewSum = 0;
   let reviewAverage = 0;
 
   useEffect(() => {
     dispatch(fetchReviews());
     dispatch(fetchProduct(productId))
-    .then(() => setLoaded(true))
-    .catch(() => setLoaded(true));
+      .then(() => setLoaded(true))
+      .catch(() => setLoaded(true));
   }, [dispatch, productId]);
 
-  let reviews = useSelector(state => selectReviewProductArray(state, product_id));
-  let reviewCount = 0;  
+  let reviews = useSelector((state) =>
+    selectReviewProductArray(state, product_id)
+  );
+  let reviewCount = 0;
 
-  reviews.forEach(review => {
+  reviews.forEach((review) => {
     reviewSum += review.rating;
     reviewCount += 1;
-
-  
   });
 
   if (reviewCount > 0) {
@@ -61,13 +61,9 @@ const ProductShow = () => {
   let reviewAmount;
 
   if (reviewCount === 1) {
-    reviewAmount = (
-      <span id='reviewAmountH1'>{reviewCount} rating</span>
-    );
+    reviewAmount = <span id="reviewAmountH1">{reviewCount} rating</span>;
   } else {
-    reviewAmount = (
-      <span id='reviewAmountH1'>{reviewCount} ratings</span>
-    );
+    reviewAmount = <span id="reviewAmountH1">{reviewCount} ratings</span>;
   }
 
   const handleClick = (e) => {
@@ -118,8 +114,8 @@ const ProductShow = () => {
   };
 
   const handleBuyNow = () => {
-    navigate("/checkoutitem")
-  }
+    navigate("/checkoutitem");
+  };
 
   if (!product) {
     return <div>Loading...</div>;
@@ -129,9 +125,11 @@ const ProductShow = () => {
     <>
       <div className="fillerdiv"></div>
       <div className="productCardItem">
+
         <div className="leftColumn">
+
           <div className="imageCarousel">
-          {thumbnails.map((photo, index) => (
+            {thumbnails.map((photo, index) => (
               <label key={index} className="photo-label">
                 <input
                   type="radio"
@@ -142,29 +140,33 @@ const ProductShow = () => {
                   className="photo-radio"
                 />
                 <img
-                src={photo}
-                alt={`photo ${index + 1}`}
-                className={`photo ${selectedImage === photo ? "selected" : ""}`}
-                onClick={() => handleImageChange(photo)}
+                  src={photo}
+                  alt={`photo ${index + 1}`}
+                  className={`photo ${
+                    selectedImage === photo ? "selected" : ""
+                  }`}
+                  onClick={() => handleImageChange(photo)}
                 />
               </label>
             ))}
           </div>
+
           <div className="productImageContainer">
             <img
-            className="productImageShow"
-            src={selectedImage}
-            alt="Product Image"
-
-          />
+              className="productImageShow"
+              src={selectedImage}
+              alt="Product Image"
+            />
           </div>
+          
         </div>
 
         <div className="productDetailsContainer">
+
           <h1 className="productNameShow">{product.name}</h1>
           <div className="ratingContainer">
             <h3 className="productRatingShow">★★★★★</h3>
-            {/* <Rating rating={product.rating} /> */}
+            <Rating rating={product.rating} />
           </div>
 
           <div className="lineSeparator"></div>
@@ -288,38 +290,44 @@ const ProductShow = () => {
             </div>
           </div>
         </div>
-      </div>
-      <div className="reviewDivider2"></div>
 
-<div className='reviewContainer'>
-  <div className="reviewDivider"></div>
-  <div id='productReviewOuterDiv'>
-    <div id='productReviewDiv'>
-      <h1 id='customerReviewsH1'>Customer Reviews</h1>
-      <div id='customerRatingsDiv'>
-        <div id='customerRatingsDivInner'>
-          <ReviewRating ReviewRating={product.rating} />
-          <span id='reviewAverageSpan'>{reviewAverage}   out of 5</span>
+      </div>
+      {/* <div className="reviewDivider"></div> */}
+
+      <div className="reviewContainer">
+        <div className="reviewDivider"></div>
+        <div id="productReviewOuterDiv">
+          <div id="productReviewDiv">
+            <h1 id="customerReviewsH1">Customer Reviews</h1>
+            <div id="customerRatingsDiv">
+              <div id="customerRatingsDivInner">
+                <ReviewRating ReviewRating={product.rating} />
+                <span id="reviewAverageSpan">{reviewAverage} out of 5</span>
+              </div>
+              <h1 id="reviewAmountH1">{reviewAmount}</h1>
+            </div>
+          </div>
+          <div id="writeReviewDiv">
+            <h1 id="reviewProductTextH1">Review this product</h1>
+            <h1 id="shareYourThoughtsH1">
+              Share your thoughts with other customers
+            </h1>
+            <div id="createReviewDiv">
+              {modalType && <ReviewForm productId={product_id} />}
+              {user ? (
+                <button id="reviewButtonOne" onClick={handleClick}>
+                  Write a customer review
+                </button>
+              ) : (
+                <p>no</p>
+              )}
+            </div>
+          </div>
         </div>
-        <h1 id='reviewAmountH1'>{reviewAmount}</h1>
+        <div className="reviewDivider"></div>
+        <ReviewIndex product={product} />
       </div>
-    </div>
-    <div id='writeReviewDiv'>
-      <h1 id='reviewProductTextH1'>Review this product</h1>
-      <h1 id='shareYourThoughtsH1'>Share your thoughts with other customers</h1>
-      <div id='createReviewDiv'>
-        {modalType && <ReviewForm productId={product_id}/>}
-        {user ? 
-          <button id='reviewButtonOne' onClick={handleClick}>Write a customer review</button>
-          :
-          <p>no</p>
-        } 
-      </div>
-    </div>
-  </div>
-  <div className="reviewDivider"></div>
-  <ReviewIndex product={product} />
-</div>
+      
       <div className="productFooter">
         <Footer />
       </div>
