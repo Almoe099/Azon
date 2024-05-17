@@ -100,25 +100,25 @@ function Navigation() {
       <div className="headerRow2">
         
         <div className="categories">
-          <NavLink to={'/'}>
+          <NavLink to={'/'} className="categoryLink">
             <div className="optionCategory">ALL</div>
           </NavLink>
-          <NavLink to={'/?category=Electronics'}>
+          <NavLink to={'/?category=Electronics'} className="categoryLink">
             <div className="optionCategory">Electronics</div>
           </NavLink>
-          <NavLink to={'/?category=Home & Kitchen'}>
+          <NavLink to={'/?category=Home & Kitchen'} className="categoryLink">
             <div className="optionCategory">Home & Kitchen</div>
           </NavLink>
-          <NavLink to={'/?category=Gaming'}>
+          <NavLink to={'/?category=Gaming'} className="categoryLink">
             <div className="optionCategory">Gaming</div>
           </NavLink>
-          <NavLink to={'/?category=Fashion'}>
+          <NavLink to={'/?category=Fashion'} className="categoryLink">
             <div className="optionCategory">Fashion</div>
           </NavLink>
-          <NavLink to={'/?category=Office'}>
+          <NavLink to={'/?category=Office'} className="categoryLink">
             <div className="optionCategory">Office</div>
           </NavLink>
-          <NavLink to={'/?category=Sports & Outdoors'}>
+          <NavLink to={'/?category=Sports & Outdoors'} className="categoryLink">
             <div className="optionCategory">Sports & Outdoors</div>
           </NavLink>
         </div>

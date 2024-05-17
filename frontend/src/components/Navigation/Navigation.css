@@ -102,6 +102,10 @@
   padding: 10px;
 }
 
+.categoryLink {
+  text-decoration: none;
+}
+
 .optionCategory:hover {
   border: 1px solid white;
 }
