@@ -323,7 +323,7 @@ const ProductShow = () => {
                   Write a customer review
                 </button>
               ) : (
-                <p>no</p>
+                <p></p>
               )}
             </div>
           </div>
