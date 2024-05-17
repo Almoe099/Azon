@@ -114,7 +114,11 @@ const ProductShow = () => {
   };
 
   const handleBuyNow = () => {
-    navigate("/checkoutitem");
+    if (user){
+      navigate("/checkoutitem");
+    } else {
+      navigate("/login");
+    }
   };
 
   if (!product) {
