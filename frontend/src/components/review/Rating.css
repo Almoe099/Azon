@@ -19,3 +19,18 @@
 .filled {
     color: #f0c14b; /* Amazon's star color */
 }
+
+#customerRatingsDivInner {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#reviewAverageSpan {
+    padding-top: 5px;
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+.star-rating-review {
+    font-size: 25px;
+}
