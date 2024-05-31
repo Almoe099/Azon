@@ -32,7 +32,7 @@ const ProductShow = () => {
   const modalType = useSelector(
     (state) => state.modal.type === "SHOW_REVIEW_MODAL"
   );
-  const [loaded, setLoaded] = useState(false);
+  // const [loaded, setLoaded] = useState(false);
 
   let reviewSum = 0;
   let reviewAverage = 0;
@@ -40,8 +40,8 @@ const ProductShow = () => {
   useEffect(() => {
     dispatch(fetchReviews());
     dispatch(fetchProduct(productId))
-      .then(() => setLoaded(true))
-      .catch(() => setLoaded(true));
+      // .then(() => setLoaded(true))
+      // .catch(() => setLoaded(true));
   }, [dispatch, productId]);
 
   let reviews = useSelector((state) =>

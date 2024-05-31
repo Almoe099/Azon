@@ -12,17 +12,25 @@
   padding: 20px;
 }
 
+.pfpName {
+  /* display: flex;
+  flex-direction: row; */
+  margin-bottom: 10px;
+
+}
+
 /* Styling for user review profile picture */
 .userReviewProfile {
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
 
 }
 
 /* Styling for user review name */
 .userReviewName {
   font-weight: bold;
-  margin-bottom: 10px;
+  font-size: 20px;
+  /* margin-bottom: 10px; */
 }
 
 /* Styling for user review title */

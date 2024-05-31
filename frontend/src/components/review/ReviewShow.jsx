@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { deleteReview, fetchReviews } from "../../store/review";
 import { ReviewRating } from "./Rating";
-import profile from "../../pictures/loading.jpg";
+import profile from "../../pictures/user.png";
 import { useEffect } from "react";
 import * as modalActions from '../../store/modal';
 import ReviewForm from "./ReviewForm";
@@ -49,8 +49,10 @@ const ReviewShow = ({ review }) => {
     userReviews = (
       <div id="userReviewContainer">
         <div className="userReviewContent">
-          <img className='userReviewProfile' src={profile} alt="" />
-          <span className="userReviewUsername">{review.name}</span>
+          <div className="pfpName">
+            <img className='userReviewProfile' src={profile} alt="" />
+            <span className="userReviewUsername">{review.name}</span>
+          </div>
           <div className="userReviewTitle">
             <ReviewRating ReviewRating={review.rating} />
             <span className="userReviewTitleText">{review.title}</span>
