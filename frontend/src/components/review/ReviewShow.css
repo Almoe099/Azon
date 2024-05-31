@@ -13,9 +13,10 @@
 }
 
 .pfpName {
-  /* display: flex;
-  flex-direction: row; */
+  display: flex;
+  flex-direction: row;
   margin-bottom: 10px;
+  padding: 12px;
 
 }
 
@@ -30,7 +31,8 @@
 .userReviewName {
   font-weight: bold;
   font-size: 20px;
-  /* margin-bottom: 10px; */
+  padding-left: 20px;
+  padding-top: 10px;
 }
 
 /* Styling for user review title */

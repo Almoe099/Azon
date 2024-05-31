@@ -333,6 +333,10 @@
     /* background-color: rgba(255, 165, 0, 0.1); Optional: light background color to make the border stand out */
 }
 
+.customerRatingsDivInner {
+    margin-top: 100px;
+}
+
 #reviewAmountH1 {
     font-size: 16px;
     padding-left: 15px;

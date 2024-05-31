@@ -313,9 +313,9 @@ const ProductShow = () => {
           </div>
           <div id="writeReviewDiv">
             <h1 id="reviewProductTextH1">Review this product</h1>
-            <h1 id="shareYourThoughtsH1">
+            {/* <h1 id="shareYourThoughtsH1">
               Share your thoughts with other customers
-            </h1>
+            </h1> */}
             <div id="createReviewDiv">
               {modalType && <ReviewForm productId={product_id} />}
               {user ? (
