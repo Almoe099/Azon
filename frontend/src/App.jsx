@@ -13,7 +13,6 @@ import CartIndex from "./components/cart/CartIndex";
 import Checkout from "./components/checkout/CheckOut";
 import CheckOutItem from "./components/checkout/CheckOutItem";
 import SearchIndex from "./components/Search/SearchIndex";
-import { element } from "prop-types";
 
 function Layout(){
 
